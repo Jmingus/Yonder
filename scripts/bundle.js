@@ -12661,8 +12661,20 @@ return jQuery;
 
 },{}],4:[function(require,module,exports){
 'use strict';
+
+var Backbone = require('backbone');
+var EventModel = require('../models/EventModel');
+module.exports = Backbone.collection.extend({
+	model: EventModel,
+	url: 'http://tiyfe.herokuapp.com/collections/EventLogging'
+});
+
+},{"../models/EventModel":6,"backbone":1}],5:[function(require,module,exports){
+'use strict';
 var Backbone = require('backbone');
 var $ = require('jquery');
+var EventCollection = require('./collections/EventCollection');
+var EventModel = require('./models/EventModel');
 var Router = Backbone.Router.extend({
   routes: {
     '': 'landingPage',
@@ -12683,12 +12695,29 @@ var Router = Backbone.Router.extend({
   }
 });
 
+$(document).ready(function () {
+  var newEvent = new EventCollection();
+});
 var app = new Router();
 Backbone.history.start();
 
-$(document).ready(function () {});
+},{"./collections/EventCollection":4,"./models/EventModel":6,"backbone":1,"jquery":3}],6:[function(require,module,exports){
+'use strict';
 
-},{"backbone":1,"jquery":3}]},{},[4])
+var Backbone = require('backbone');
+module.exports = Backbone.Model.extend({
+	defaults: {
+		official: false,
+		name: '',
+		type: '',
+		day: '',
+		timeOfDay: '',
+		location: ''
+	},
+	urlRoot: 'http://tiyfe.herokuapp.com/collections/EventLogging'
+});
+
+},{"backbone":1}]},{},[5])
 
 
 //# sourceMappingURL=bundle.js.map
