@@ -8,5 +8,5 @@ module.exports = Backbone.Module.extend({
 		timeOfDay: '',
 		location: ''
 	},
-	url: ''
+	urlRoot: 'http://tiyfe.herokuapp.com/collections/EventLogging'
 });
