@@ -8,13 +8,16 @@ var Router = Backbone.Router.extend({
     'following': 'followingPage'
   },
   landingPage: function(){
-
+    $('section').hide()
+    $('#landingPage').show()
   },
   mapsPage: function(){
-
+    $('section').hide()
+    $('#mapsPage').show()
   },
   followingPage: function(){
-
+    $('section').hide()
+    $('#followingPage').show()
   }
 });
 
