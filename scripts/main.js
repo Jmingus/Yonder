@@ -8,6 +8,4 @@ $(document).ready(function(){
 	var newEvent = new EventCollection
 
 
-
-
 });
