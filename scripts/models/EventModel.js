@@ -1,5 +1,5 @@
 var Backbone = require('backbone');
-module.exports = Backbone.Module.extend({
+module.exports = Backbone.Model.extend({
 	defaults:{
 		official: false,
 		name: '',
