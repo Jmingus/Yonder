@@ -2,6 +2,7 @@
 var Backbone = require('backbone');
 var $ = require('jquery');
 var EventCollection = require('./collections/EventCollection');
+var EventView= require('./views/EventView');
 
 var EventModel = require('./models/EventModel');
 

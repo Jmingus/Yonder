@@ -12674,6 +12674,7 @@ module.exports = Backbone.Collection.extend({
 var Backbone = require('backbone');
 var $ = require('jquery');
 var EventCollection = require('./collections/EventCollection');
+var EventView = require('./views/EventView');
 
 var EventModel = require('./models/EventModel');
 
@@ -12761,7 +12762,7 @@ $(document).ready(function () {
 var app = new Router();
 Backbone.history.start();
 
-},{"./collections/EventCollection":4,"./models/EventModel":6,"backbone":1,"jquery":3}],6:[function(require,module,exports){
+},{"./collections/EventCollection":4,"./models/EventModel":6,"./views/EventView":7,"backbone":1,"jquery":3}],6:[function(require,module,exports){
 'use strict';
 
 var Backbone = require('backbone');
@@ -12776,6 +12777,11 @@ module.exports = Backbone.Model.extend({
 	},
 	urlRoot: 'http://tiyfe.herokuapp.com/collections/EventLogging'
 });
+
+},{"backbone":1}],7:[function(require,module,exports){
+'use strict';
+
+var Backbone = require('backbone');
 
 },{"backbone":1}]},{},[5])
 
