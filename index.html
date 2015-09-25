@@ -3,13 +3,23 @@
   <head>
     <title>Yonder</title>
     <link rel="stylesheet" type="text/css" href="/styles/main.sass.css">
+    <style type="text/css">
+      html, body { height: 100%; margin: 0; padding: 0; }
+      #map { height: 100%; }
+      #mapsPage {height: 100%; width: 100%;}
+    </style>
   </head>
   <body>
     <a href="#">Home</a>
     <a href="#maps">Maps</a>
     <a href="#following">Following</a>
     <section id="landingPage">Home</section>
-    <section id="mapsPage">Maps</section>
+    <section id="mapsPage">
+    <div id="map"></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4LwZFVazsCpP77wyAtMKwsgV1QCb6D_k">
+    </script>
+    </section>
     <section id="followingPage">Following</section>
   <script type="text/javascript" src="/scripts/bundle.js"></script>
   </body>
