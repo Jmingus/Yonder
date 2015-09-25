@@ -2,9 +2,12 @@
 var Backbone = require('backbone');
 var $ = require('jquery');
 var EventCollection = require('./collections/EventCollection');
-
+var EventView= require('./views/EventView');
 var EventModel = require('./models/EventModel');
 
+var UserCollection = require('./collections/UserCollection');
+var UserModel = require('./models/UserModel');
+var UserView = require('./views/UserView')
 
 //Router
 var Router = Backbone.Router.extend({
@@ -16,6 +19,14 @@ var Router = Backbone.Router.extend({
   landingPage: function(){
     $('section').hide()
     $('#landingPage').show()
+    $('#landingPage').append('<form id="username">'+
+      '<input type="text">'+
+      '<label><input type="checkbox" name="music-checkbox" value="music">Music</label>'+
+      '<label><input type="checkbox" name="athletics-checkbox" value="athletics">Athletics</label>'+
+      '<label><input type="checkbox" name="tech-checkbox" value="tech">Tech</label>'+
+      '<label><input type="checkbox" name="food-checkbox" value="food">Food</label>'+
+      '<label><input type="checkbox" name="personal-checkbox" value="personal">Personal</label>'+
+      '</form>')
   },
   mapsPage: function(){
     $('section').hide()
@@ -75,29 +86,62 @@ $(document).ready(function(){
   var $inputArea = $('#inputArea');
   var $inputType = $('#inputType');
 
+
   var newEvent = new EventCollection();
 
+//UserView
+  var userCollection = new UserCollection();
+
+  $('#username').submit(function(e){
+    e.preventDefault
+    console.log($('#username > input').val())
+
+    userCollection.create({
+      username: $('#username > input').val()
+    });
+    console.log('Username Posted')
+  })
+
+  userCollection.on('add', function(userEvents){
+    var x = new UserView({model: userEvents})
+    $('#landingPage').append(x.$el);
+    console.log(x.$el)
+  })
+
+  userCollection.fetch()
+
+  function checkCheckboxes(){
+    if ($('input[type=checkbox]').checked){
+
+    }
+  }
 
   function onFormSubmit(e){
     e.preventDefault();
-    newEvent.add({
-      name: $inputName.val(),
-      day: parseInt($inputDay.val()),
-      time: $inputTime.val(),
-      location: parseInt($inputArea.val()),
-      type: parseInt($inputType.val())
-
+      newEvents.create({
+        name: $inputName.val(),
+        day: parseInt($inputDay.val()),
+        time: $inputTime.val(),
+        location: parseInt($inputArea.val()),
+        categories: parseInt($inputType.val())
     });
+
     console.log($inputName.val());
     console.log(parseInt($inputDay.val()));
     console.log(parseInt($inputArea.val()));
     console.log(parseInt($inputType.val()));
   }
-
   $form.on('submit',onFormSubmit);
 
+newEvents.on('add',function(eventX){
+  var eventY = new EventView({model:eventX});
+  $('#landingPage').append(eventY.$el);
+})
 
 
-});
 var app = new Router();
 Backbone.history.start();
+
+});
+
+
