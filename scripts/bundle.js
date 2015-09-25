@@ -12664,7 +12664,7 @@ return jQuery;
 
 var Backbone = require('backbone');
 var EventModel = require('../models/EventModel');
-module.exports = Backbone.collection.extend({
+module.exports = Backbone.Collection.extend({
 	model: EventModel,
 	url: 'http://tiyfe.herokuapp.com/collections/EventLogging'
 });
@@ -12674,6 +12674,7 @@ module.exports = Backbone.collection.extend({
 var Backbone = require('backbone');
 var $ = require('jquery');
 var EventCollection = require('./collections/EventCollection');
+
 var EventModel = require('./models/EventModel');
 
 //Router
@@ -12730,7 +12731,32 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 google.maps.event.addDomListener(window, 'load', initMap);
 //DOM Code
 $(document).ready(function () {
+  var $form = $('#form');
+  var $inputName = $('#inputName');
+  var $inputDay = $('#inputDay');
+  var $inputTime = $('#inputTime');
+  var $inputArea = $('#inputArea');
+  var $inputType = $('#inputType');
+
   var newEvent = new EventCollection();
+
+  function onFormSubmit(e) {
+    e.preventDefault();
+    newEvent.add({
+      name: $inputName.val(),
+      day: parseInt($inputDay.val()),
+      time: $inputTime.val(),
+      location: parseInt($inputArea.val()),
+      type: parseInt($inputType.val())
+
+    });
+    console.log($inputName.val());
+    console.log(parseInt($inputDay.val()));
+    console.log(parseInt($inputArea.val()));
+    console.log(parseInt($inputType.val()));
+  }
+
+  $form.on('submit', onFormSubmit);
 });
 var app = new Router();
 Backbone.history.start();
@@ -12743,10 +12769,10 @@ module.exports = Backbone.Model.extend({
 	defaults: {
 		official: false,
 		name: '',
-		type: '',
 		day: '',
 		timeOfDay: '',
-		location: ''
+		location: '',
+		type: ''
 	},
 	urlRoot: 'http://tiyfe.herokuapp.com/collections/EventLogging'
 });

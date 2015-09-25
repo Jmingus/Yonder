@@ -2,7 +2,9 @@
 var Backbone = require('backbone');
 var $ = require('jquery');
 var EventCollection = require('./collections/EventCollection');
+
 var EventModel = require('./models/EventModel');
+
 
 //Router
 var Router = Backbone.Router.extend({
@@ -59,7 +61,35 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 google.maps.event.addDomListener(window, 'load', initMap)
 //DOM Code
 $(document).ready(function(){
-	var newEvent = new EventCollection();
+  var $form = $('#form');
+  var $inputName = $('#inputName');
+  var $inputDay = $('#inputDay');
+  var $inputTime= $('#inputTime');
+  var $inputArea = $('#inputArea');
+  var $inputType = $('#inputType');
+
+  var newEvent = new EventCollection();
+
+
+  function onFormSubmit(e){
+    e.preventDefault();
+    newEvent.add({
+      name: $inputName.val(),
+      day: parseInt($inputDay.val()),
+      time: $inputTime.val(),
+      location: parseInt($inputArea.val()),
+      type: parseInt($inputType.val())
+
+    });
+    console.log($inputName.val());
+    console.log(parseInt($inputDay.val()));
+    console.log(parseInt($inputArea.val()));
+    console.log(parseInt($inputType.val()));
+  }
+
+  $form.on('submit',onFormSubmit);
+
+
 
 });
 var app = new Router();
