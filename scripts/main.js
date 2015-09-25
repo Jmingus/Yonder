@@ -3,6 +3,8 @@ var Backbone = require('backbone');
 var $ = require('jquery');
 var EventCollection = require('./collections/EventCollection');
 var EventModel = require('./models/EventModel');
+
+
 var Router = Backbone.Router.extend({
   routes: {
     '': 'landingPage',
@@ -24,8 +26,31 @@ var Router = Backbone.Router.extend({
 });
 
 $(document).ready(function(){
-	var newEvent = new EventCollection();
-	
+  var $form = $('#form');
+  var $inputName = $('#inputName');
+  var $inputDay = $('#inputDay');
+  var $inputTime= $('#inputTime');
+  var $inputArea = $('#inputArea');
+  var $inputType = $('#inputType');
+
+  var newEvent = new EventCollection();
+
+
+
+  function onFormSubmit(e){
+    e.preventDefault();
+    newEvent.add({
+      name: $inputName.val(),
+      day: $inputDay.val()
+
+    });
+    console.log($inputTime.val());
+  }
+
+  $form.on('submit',onFormSubmit);
+
+
+
 
 });
 var app = new Router();
