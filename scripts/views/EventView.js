@@ -22,7 +22,8 @@ module.export = Backbone.View.extend({
 	},
 	unfollow: function(){
 		this.$el.remove();
-	}
+	},
+	template
 
 
 });

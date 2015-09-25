@@ -1,22 +1,68 @@
 <!DOCTYPE html>
 <html>
   <head>
+
+    <meta charset="utf-8">
     <title>Yonder</title>
+    <link type="text/css" rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" type="text/css" href="/styles/main.sass.css">
-    <style type="text/css">
-      html, body { height: 100%; margin: 0; padding: 0; }
-      #map { height: 100%; }
-      #mapsPage {height: 100%; width: 100%;}
-    </style>
-    <link rel="stylesheet" type="text/css" href="jquery-clockpicker.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
   </head>
 
   <body>
-    <a href="#">Home</a>
-    <a href="#maps">Maps</a>
-    <a href="#following">Following</a>
-    <section id="landingPage">Home</section>
+
+    <header>
+
+      <div class="logo">
+        <p>YONDER</p>
+      </div>
+
+      <div>
+        <p><a href="#">Menu</a></p>
+      </div>
+
+    </header>
+
+    <nav>
+
+      <ul>
+        <li><a href="#">Events</a></li>
+        <li><a href="#maps">Map</a></li>
+        <li><a href="#profile">Profile</a></li>
+      </ul>
+
+    </nav>
+
+    <section id="landingPage">
+
+        <div class="hero">
+
+          <h1>Life is happening</h1>
+          <p>Go do something</p>
+
+        </div>
+
+        <article class="event">
+
+          <div class="event-info">
+            <h2 class="day">Day</h2>
+            <h3 class="event">Event</h3>
+            <p class="location">Location</p>
+          </div>
+
+          <div class="event-photo"></div>
+
+          <div class="more-info">
+
+            <p class="time">Time</p>
+            <p class="description">Description</p>
+
+          </div>
+
+        </article>
+
+    </section>
     <section id="mapsPage">
     <div id="map"></div>
 
