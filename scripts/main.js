@@ -90,9 +90,6 @@ $(document).ready(function(){
   var $inputArea = $('#inputArea');
   var $inputType = $('#inputType');
 
-<<<<<<< HEAD
-  var newEvents = new EventCollection();
-=======
   var newEvent = new EventCollection();
 
 //UserView
