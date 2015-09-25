@@ -361,3 +361,12 @@
   padding: 5px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 4px; }
+
+/* Global Styles */
+::-moz-selection {
+  background-color: black;
+  color: white; }
+
+::selection {
+  background-color: black;
+  color: white; }
