@@ -46,6 +46,13 @@ function initMap() {
       infoWindow.setPosition(pos);
       infoWindow.setContent('Location found.');
       map.setCenter(pos);
+      // var location = new google.maps.LatLng(pos.lat,pos.lng);
+      // var request = {
+      //   location: location,
+      //   radius: '10'
+      // }
+      // var service = new google.maps.places.PlacesService(map);
+      // service.nearbySearch(request)
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
     });
