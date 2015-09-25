@@ -76,29 +76,33 @@ $(document).ready(function(){
   var $inputArea = $('#inputArea');
   var $inputType = $('#inputType');
 
-  var newEvent = new EventCollection();
-
-
+  var newEvents = new EventCollection();
   function onFormSubmit(e){
     e.preventDefault();
-    newEvent.add({
-      name: $inputName.val(),
-      day: parseInt($inputDay.val()),
-      time: $inputTime.val(),
-      location: parseInt($inputArea.val()),
-      type: parseInt($inputType.val())
-
+      newEvents.create({
+        name: $inputName.val(),
+        day: parseInt($inputDay.val()),
+        time: $inputTime.val(),
+        location: parseInt($inputArea.val()),
+        categories: parseInt($inputType.val())
     });
+
     console.log($inputName.val());
     console.log(parseInt($inputDay.val()));
     console.log(parseInt($inputArea.val()));
     console.log(parseInt($inputType.val()));
   }
-
   $form.on('submit',onFormSubmit);
 
+newEvents.on('add',function(eventX){
+  var eventY = new EventView({model:eventX});
+  $('#landingPage').append(eventY.$el);
+})
 
 
-});
 var app = new Router();
 Backbone.history.start();
+
+});
+
+
