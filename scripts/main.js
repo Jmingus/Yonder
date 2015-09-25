@@ -18,7 +18,14 @@ var Router = Backbone.Router.extend({
   landingPage: function(){
     $('section').hide()
     $('#landingPage').show()
-    $('#landingPage').append('<form id="username"><input type="text"></form')
+    $('#landingPage').append('<form id="username">'+
+      '<input type="text">'+
+      '<label><input type="checkbox" name="music-checkbox" value="music">Music</label>'+
+      '<label><input type="checkbox" name="athletics-checkbox" value="athletics">Athletics</label>'+
+      '<label><input type="checkbox" name="tech-checkbox" value="tech">Tech</label>'+
+      '<label><input type="checkbox" name="food-checkbox" value="food">Food</label>'+
+      '<label><input type="checkbox" name="personal-checkbox" value="personal">Personal</label>'+
+      '</form>')
   },
   mapsPage: function(){
     $('section').hide()
@@ -101,6 +108,11 @@ $(document).ready(function(){
 
   userCollection.fetch()
 
+  function checkCheckboxes(){
+    if ($('input[type=checkbox]').checked){
+
+    }
+  }
 
   function onFormSubmit(e){
     e.preventDefault();
