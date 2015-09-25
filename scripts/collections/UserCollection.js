@@ -1,5 +1,6 @@
 var Backbone = require('backbone');
 var userModel = require('../models/UserModel.js');
-var UserCollection = Backbone.Collection.extend({
-  model: userModel
+module.exports = Backbone.Collection.extend({
+  model: userModel,
+  url: 'http://tiyfe.herokuapp.com/collections/yonder'
 })

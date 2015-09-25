@@ -2,9 +2,11 @@
 var Backbone = require('backbone');
 var $ = require('jquery');
 var EventCollection = require('./collections/EventCollection');
-
 var EventModel = require('./models/EventModel');
 
+var UserCollection = require('./collections/UserCollection');
+var UserModel = require('./models/UserModel');
+var UserView = require('./views/UserView')
 
 //Router
 var Router = Backbone.Router.extend({
@@ -16,6 +18,7 @@ var Router = Backbone.Router.extend({
   landingPage: function(){
     $('section').hide()
     $('#landingPage').show()
+    $('#landingPage').append('<form id="username"><input type="text"></form')
   },
   mapsPage: function(){
     $('section').hide()
@@ -76,6 +79,27 @@ $(document).ready(function(){
   var $inputType = $('#inputType');
 
   var newEvent = new EventCollection();
+
+//UserView
+  var userCollection = new UserCollection();
+
+  $('#username').submit(function(e){
+    e.preventDefault
+    console.log($('#username > input').val())
+
+    userCollection.create({
+      username: $('#username > input').val()
+    });
+    console.log('Username Posted')
+  })
+
+  userCollection.on('add', function(userEvents){
+    var x = new UserView({model: userEvents})
+    $('#landingPage').append(x.$el);
+    console.log(x.$el)
+  })
+
+  userCollection.fetch()
 
 
   function onFormSubmit(e){
