@@ -3,10 +3,10 @@ module.exports = Backbone.Model.extend({
 	defaults:{
 		official: false,
 		name: '',
-		type: '',
 		day: '',
 		timeOfDay: '',
-		location: ''
+		location: '',
+		type: ''
 	},
 	urlRoot: 'http://tiyfe.herokuapp.com/collections/EventLogging'
 });

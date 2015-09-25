@@ -12674,6 +12674,7 @@ module.exports = Backbone.Collection.extend({
 var Backbone = require('backbone');
 var $ = require('jquery');
 var EventCollection = require('./collections/EventCollection');
+
 var EventModel = require('./models/EventModel');
 
 var Router = Backbone.Router.extend({
@@ -12710,10 +12711,16 @@ $(document).ready(function () {
     e.preventDefault();
     newEvent.add({
       name: $inputName.val(),
-      day: $inputDay.val()
+      day: parseInt($inputDay.val()),
+      time: $inputTime.val(),
+      location: parseInt($inputArea.val()),
+      type: parseInt($inputType.val())
 
     });
-    console.log($inputTime.val());
+    console.log($inputName.val());
+    console.log(parseInt($inputDay.val()));
+    console.log(parseInt($inputArea.val()));
+    console.log(parseInt($inputType.val()));
   }
 
   $form.on('submit', onFormSubmit);
@@ -12729,10 +12736,10 @@ module.exports = Backbone.Model.extend({
 	defaults: {
 		official: false,
 		name: '',
-		type: '',
 		day: '',
 		timeOfDay: '',
-		location: ''
+		location: '',
+		type: ''
 	},
 	urlRoot: 'http://tiyfe.herokuapp.com/collections/EventLogging'
 });
