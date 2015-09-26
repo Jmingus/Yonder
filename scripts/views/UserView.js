@@ -2,6 +2,7 @@ var Backbone = require('backbone')
 var _ = require('backbone/node_modules/underscore')
 var $ = require('jquery')
 module.exports = Backbone.View.extend({
+  tagName: 'div',
   initialize: function(){
     _.bindAll(
       this,

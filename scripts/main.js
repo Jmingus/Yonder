@@ -100,6 +100,7 @@ $(document).ready(function(){
   userCollection.on('add', function(userEvents){
     var x = new UserView({model: userEvents})
     $('#landingPage').append(x.$el);
+
   })
 
   userCollection.fetch({success: function(response){
