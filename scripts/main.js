@@ -2,7 +2,7 @@
 var Backbone = require('backbone');
 var $ = require('jquery');
 var EventCollection = require('./collections/EventCollection');
-var EventView= require('./views/EventView');
+var EventView = require('./views/EventView');
 var EventModel = require('./models/EventModel');
 
 var UserCollection = require('./collections/UserCollection');
@@ -14,7 +14,7 @@ var Router = Backbone.Router.extend({
   routes: {
     '': 'landingPage',
     'maps': 'mapsPage',
-    'following': 'followingPage'
+    'profile': 'followingPage'
   },
   landingPage: function(){
     $('section').hide()
@@ -82,7 +82,7 @@ $(document).ready(function(){
   var $inputType = $('#inputType');
 
 
-  var newEvent = new EventCollection();
+  var newEvents = new EventCollection();
 
 //UserView
   var userCollection = new UserCollection();
