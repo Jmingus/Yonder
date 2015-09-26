@@ -1,6 +1,13 @@
 /* Events List */
 
 .hero {
+	background: linear-gradient(
+		    rgba(177, 82, 38, 0.75), 
+		    rgba(177, 82, 38, 0.75)
+		    ), 
+		    url(../images/hero.jpg) center center no-repeat;
+		background-size: cover;
+	padding: 3rem 0;
 	text-align: center;
 }
 
@@ -8,8 +15,97 @@
 	font: {
 		family: $font-heading;
 		@include fntz(2);
-		weight: 700;
+		weight: 400;
 	}
-	text-transform: lowercase;
+}
+
+#tagline-sub {
+	font: {
+		style: italic;
+		weight: 400;
+	}
+}
+
+.event {
+	background-color: $color-neutral-dark;
+	clear: both;
+	overflow: hidden;
+
+	.event-info {
+		box-sizing: border-box;
+		float: left;
+		width: 50%;
+
+		.toggle {
+			box-sizing: border-box;
+			padding: 0.5rem 0 0.5rem 2rem;
+			width: 100%;
+
+			a {
+				background-color: lighten($color-neutral-dark, 5%);
+				border-radius: 0.25rem;
+				color: $color-contrast;
+				font: {
+					style: italic;
+					weight: 300;
+				}
+				margin-left: -0.5rem;
+				padding: 0.5rem;
+			}
+
+		}
+
+	}
+
+	.event-photo {
+		background: linear-gradient(
+		    rgba(0, 172, 178, 0.75), 
+		    rgba(0, 172, 178, 0.75)
+		    ), 
+		    url(../images/dino-1.gif) center center no-repeat;
+		background-size: cover;
+		float: right;
+		height: 12rem;
+		overflow: hidden;
+		width: 50%;
+	}
+
+	.more-info {
+		clear: both;
+		display: none;
+		padding: 1rem 2rem;
+	}
+
+	.time {
+		padding: 0.5rem 0 0 2rem;
+	}
+
+	.location {
+		padding-left: 2rem;
+	}
+
+	&:nth-child(odd) {
+		background-color: lighten($color-neutral-dark, 10%);
+
+		.event-info {
+			float: right;
+		}
+
+		.event-photo {
+			background: linear-gradient(
+		    rgba(0, 172, 178, 0.75), 
+		    rgba(0, 172, 178, 0.75)
+		    ), 
+		    url(../images/dino-2.jpg) center center no-repeat;
+			background-size: cover;
+			float: left;
+		}
+
+		.toggle a {
+			background-color: lighten($color-neutral-dark, 15%);
+		}
+
+	}
+
 }
 
