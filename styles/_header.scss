@@ -34,7 +34,7 @@ header {
 
 }
 
-nav {
+.nav-sm {
 	background-color: $color-secondary;
 	display: none;
 
@@ -55,5 +55,9 @@ nav {
 
 	}
 
+}
+
+.nav-lg {
+	display: none;
 }
 

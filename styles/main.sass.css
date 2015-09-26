@@ -388,6 +388,9 @@ a {
 #followingPage {
   display: none; }
 
+.wrapper {
+  background-color: #444444; }
+
 /* Headings */
 h1 {
   font-family: "Roboto Slab", serif;
@@ -426,23 +429,27 @@ header {
     font-weight: 500;
     text-transform: uppercase; }
 
-nav {
+.nav-sm {
   background-color: #B25010;
   display: none; }
-  nav ul {
+  .nav-sm ul {
     padding: 1rem 0;
     text-align: center; }
-    nav ul li {
+    .nav-sm ul li {
       display: inline;
       padding: 1.25rem; }
-      nav ul li a {
+      .nav-sm ul li a {
         color: #FFFFFF;
         text-transform: uppercase; }
 
+.nav-lg {
+  display: none; }
+
 /* Events List */
 .hero {
-  background-color: #DDDDDD;
-  padding: 2rem;
+  background: linear-gradient(rgba(177, 82, 38, 0.75), rgba(177, 82, 38, 0.75)), url(../images/hero.jpg) center center no-repeat;
+  background-size: cover;
+  padding: 3rem 0;
   text-align: center; }
 
 #tagline {
@@ -491,7 +498,7 @@ nav {
   .event .location {
     padding-left: 2rem; }
   .event:nth-child(odd) {
-    background-color: #2b2b2b; }
+    background-color: #5e5e5e; }
     .event:nth-child(odd) .event-info {
       float: right; }
     .event:nth-child(odd) .event-photo {
@@ -499,7 +506,7 @@ nav {
       background-size: cover;
       float: left; }
     .event:nth-child(odd) .toggle a {
-      background-color: #3f3f3f; }
+      background-color: #6a6a6a; }
 
 /* Map Styles */
 html, body {
@@ -523,19 +530,59 @@ footer {
   text-align: center; }
 
 /* Media Queries */
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 600px) {
+  .menu-link {
+    display: none; }
+  .nav-lg {
+    display: inline;
+    float: right; }
+    .nav-lg ul {
+      padding: 1rem 0;
+      text-align: center; }
+      .nav-lg ul li {
+        display: inline;
+        padding: 1.25rem; }
+        .nav-lg ul li a {
+          color: #FFFFFF;
+          text-transform: uppercase; }
   .hero {
-    padding: 5rem; }
+    padding: 6rem; }
   #tagline {
     font-size: 36px;
     font-size: 2.25rem; }
   #tagline-sub {
     font-size: 18.4px;
     font-size: 1.15rem; }
+  .event .toggle {
+    display: none; }
   .event .event-photo {
     float: left;
     width: 12rem; }
+  .event .event-info {
+    float: left;
+    width: 25%; }
+  .event .more-info {
+    display: block;
+    padding: 0 0 2rem 14rem; }
   .event:nth-child(odd) .event-photo {
     float: left; }
   .event:nth-child(odd) .event-info {
-    float: left; } }
+    float: left;
+    width: 25%; } }
+
+@media screen and (min-width: 960px) {
+  .event {
+    margin: 0 auto;
+    width: 70%; }
+    .event .event-info {
+      width: 35%; }
+    .event .more-info {
+      clear: none;
+      display: initial;
+      float: left;
+      padding: 4rem 0 2rem 0;
+      width: 35%; }
+    .event:nth-child(odd) .event-info {
+      width: 35%; }
+    .event:nth-child(odd) .more-info {
+      width: 35%; } }
