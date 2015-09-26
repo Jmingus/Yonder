@@ -1,0 +1,15 @@
+/* Events List */
+
+.hero {
+	text-align: center;
+}
+
+#tagline {
+	font: {
+		family: $font-heading;
+		@include fntz(2);
+		weight: 700;
+	}
+	text-transform: lowercase;
+}
+

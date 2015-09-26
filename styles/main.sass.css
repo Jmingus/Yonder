@@ -8,6 +8,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /* Picked from bootstrap: .popover, .btn, .text-primary */
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,300,300italic,400italic,500);
 .popover {
   position: absolute;
   top: 0;
@@ -362,7 +363,81 @@
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 4px; }
 
+/* Variables */
+/* Mixins */
+/* Header */
+header {
+  background-color: #FF802F;
+  overflow: hidden; }
+
+.logo {
+  float: left;
+  margin-left: 1rem; }
+  .logo p {
+    color: white;
+    font-family: "Roboto Slab", serif;
+    font-size: 28px;
+    font-size: 1.75rem;
+    font-weight: 700; }
+
+.menu-link {
+  float: right;
+  margin: 0.6rem 1rem 0 0; }
+  .menu-link a {
+    color: white;
+    font-size: 20px;
+    font-size: 1.25rem;
+    text-transform: uppercase; }
+
+nav {
+  background-color: #B25010; }
+  nav ul {
+    padding: 0.85rem 0;
+    text-align: center; }
+    nav ul li {
+      display: inline;
+      padding: 1rem; }
+      nav ul li a {
+        color: white;
+        font-size: 20px;
+        font-size: 1.25rem;
+        text-transform: uppercase; }
+
+/* Events List */
+.hero {
+  text-align: center; }
+
+#tagline {
+  font-family: "Roboto Slab", serif;
+  font-size: 32px;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: lowercase; }
+
+/* Map Styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0; }
+
+#map {
+  height: 100%; }
+
+#mapsPage {
+  height: 100%;
+  width: 100%; }
+
 /* Global Styles */
+body {
+  color: #444444;
+  font-family: "Roboto", sans-serif; }
+
+p {
+  line-height: 1.6em; }
+
+a {
+  text-decoration: none; }
+
 ::-moz-selection {
   background-color: black;
   color: white; }

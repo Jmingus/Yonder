@@ -1,0 +1,61 @@
+/* Header */
+
+header {
+	background-color: $color-primary;
+	overflow: hidden;
+}
+
+.logo {
+	float: left;
+	margin-left: 1rem;
+
+	p {
+		color: white;
+		font: {
+			family: $font-heading;
+			@include fntz(1.75);
+			weight: 700;
+		}
+	}
+
+}
+
+.menu-link {
+	float: right;
+	margin: 0.6rem 1rem 0 0;
+
+	a {
+		color: white;
+		font: {
+			@include fntz(1.25);
+		}
+		text-transform: uppercase;
+	}
+
+}
+
+nav {
+	background-color: $color-secondary;
+
+	ul {
+		padding: 0.85rem 0;
+		text-align: center;
+
+		li {
+			display: inline;
+			padding: 1rem;
+
+			a {
+				color: white;
+				font: {
+					@include fntz(1.25);
+				}
+				text-transform: uppercase;
+			}
+
+		}
+
+	}
+
+}
+
