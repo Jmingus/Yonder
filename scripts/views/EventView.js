@@ -1,7 +1,8 @@
 var Backbone = require('backbone');
+var $ = require('jquery');
 var _ =require('backbone/node_modules/underscore');
 module.export = Backbone.View.extend({
-	tagName: 'section',
+	tagName: 'article',
 	intitalize:function(){
 		_.bindAll(
 			this,
@@ -29,7 +30,6 @@ module.export = Backbone.View.extend({
 
 });
 
-//when the data is coming from the server, I want to change it from the int values back to the strings
 
 
 
