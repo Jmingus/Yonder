@@ -11,6 +11,7 @@ module.export = Backbone.View.extend({
 		this.$el.on('change',this.render());
 		this.render();
 	},
+	template: _.template($('#Eventtemplate').html()),
 	render:function(){
 		var inputName = this.model.get('name');
 		var inputDay = this.model.getDayString();
@@ -18,12 +19,12 @@ module.export = Backbone.View.extend({
 		var inputLocation =this.model.getLocationString();
 		var inputType = this.model.getTypeString();
 
-		this.$el.html('<div>'+inputName+'<br>'+inputDay+'<br>'+inputTimeOfDay+'<br>'+inputLocation+'<br>'+inputType+'</div>');
+		this.$el.html(this.template(this.model.attributes))
 	},
 	unfollow: function(){
 		this.$el.remove();
+		this.model.destroy();
 	},
-	template
 
 
 });

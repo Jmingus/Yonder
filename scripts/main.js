@@ -2,11 +2,7 @@
 var Backbone = require('backbone');
 var $ = require('jquery');
 var EventCollection = require('./collections/EventCollection');
-<<<<<<< HEAD
 var EventView= require('./views/EventView');
-
-=======
->>>>>>> ace60180d3d49049033f7c669e49b8b014fe6042
 var EventModel = require('./models/EventModel');
 
 var UserCollection = require('./collections/UserCollection');
@@ -119,7 +115,6 @@ $(document).ready(function(){
     }
   }
 
->>>>>>> ace60180d3d49049033f7c669e49b8b014fe6042
   function onFormSubmit(e){
     e.preventDefault();
       newEvents.create({
@@ -138,8 +133,9 @@ $(document).ready(function(){
   $form.on('submit',onFormSubmit);
 
 newEvents.on('add',function(eventX){
-  var eventY = new EventView({model:eventX});
-  $('#landingPage').append(eventY.$el);
+  var y = new EventView({model:eventX});
+  $('#landingPage').append(y.$el);
+  console.log(x.$el);
 })
 
 
