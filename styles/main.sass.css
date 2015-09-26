@@ -399,20 +399,26 @@ nav {
       padding: 1rem; }
       nav ul li a {
         color: white;
-        font-size: 20px;
-        font-size: 1.25rem;
+        font-size: 18.4px;
+        font-size: 1.15rem;
         text-transform: uppercase; }
 
 /* Events List */
 .hero {
+  background-color: grey;
   text-align: center; }
 
 #tagline {
   font-family: "Roboto Slab", serif;
   font-size: 32px;
   font-size: 2rem;
-  font-weight: 700;
-  text-transform: lowercase; }
+  font-weight: 400;
+  padding-top: 2rem; }
+
+#tagline-sub {
+  font-style: italic;
+  font-weight: 400;
+  padding-bottom: 2rem; }
 
 /* Map Styles */
 html, body {

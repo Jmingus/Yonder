@@ -1,6 +1,7 @@
 /* Events List */
 
 .hero {
+	background-color: grey;
 	text-align: center;
 }
 
@@ -8,8 +9,16 @@
 	font: {
 		family: $font-heading;
 		@include fntz(2);
-		weight: 700;
+		weight: 400;
 	}
-	text-transform: lowercase;
+	padding-top: 2rem;
+}
+
+#tagline-sub {
+	font: {
+		style: italic;
+		weight: 400;
+	}
+	padding-bottom: 2rem;
 }
 
