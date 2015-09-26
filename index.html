@@ -35,37 +35,16 @@
     </nav>
 
     <section id="landingPage">
-      <script type="text/template" id="landingPage-template">
         <div class="hero">
           <p id="tagline">Lifes happening</p>
           <p id="tagline-sub">Go do something</p>
-          <%= name %>
         </div>
-      </script>
         <article class="event">
-
-          <div class="event-info">
-            <h1 class="day">Day</h1>
-            <h2 class="event">Event</h2>
-            <p class="location">Location</p>
-          </div>
-
-          <div class="event-photo"></div>
-
-          <div class="more-info">
-
-            <p class="time">Time</p>
-            <p class="description">Description</p>
-
-          </div>
-
         </article>
     </section>
+    <article id="profile"></article>
     <section id="mapsPage">
     <div id="map"></div>
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4LwZFVazsCpP77wyAtMKwsgV1QCb6D_k&libraries=places">
-    </script>
     </section>
 
     <section id="followingPage">Following
@@ -94,7 +73,7 @@
             <option value="4">Downtown</option>
             <option value="5">South Congress</option>
           </select>
-    			<select id="inputType"name="Event Type">
+    			<select id="inputType" name="Event Type">
   					<option value="1">Music</option>
   					<option value="2">Athletics</option>
   					<option value="3">Tech</option>
@@ -105,10 +84,27 @@
     		</form>
     	</div>
     </section>
-  <script type="text/javascript" src="/scripts/bundle.js"></script>
-  <script type="text/javascript"></script>
-  <script type="text/template" id="EventTemplate">
+     <script type="text/template" id="events-template">
+          <div>
+            <div class="event-info">
+              <h1 class="day"><%- day_id %></h1>
+              <h2 class="event"><%- name %></h2>
+              <p class="location"><%- venue %></p>
+            </div>
 
-  </script>
+            <div class="event-photo"></div>
+
+            <div class="more-info">
+
+              <p class="time"><%- time_of_day_id %></p>
+              <p class="description">Description</p>
+
+            </div>
+          </div>
+    </script>
+     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4LwZFVazsCpP77wyAtMKwsgV1QCb6D_k&libraries=places">
+    </script>
+
+  <script type="text/javascript" src="/scripts/bundle.js"></script>
   </body>
 </html>

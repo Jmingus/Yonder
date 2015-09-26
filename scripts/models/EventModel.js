@@ -1,28 +1,30 @@
 var Backbone = require('backbone');
 module.exports = Backbone.Model.extend({
 	defaults:{
-		official: false,
+		id: null,
+		official: true,
 		name: '',
-		day: null,
-		timeOfDay: null,
-		location: null,
-		categories: null
+		day_id: null,
+		time_of_day_id: null,
+		venue: null,
+		category_id: null,
+		location_id: null,
 	},
-	urlRoot: 'http://tiyfe.herokuapp.com/collections/EventLogging',
+	urlRoot: 'https://yonder.herokuapp.com/events',
 	getDayString: function(){
-		if(this.get('day') ===1){
+		if(this.get('day_id') ===1){
 			return  'Monday';
-		}else if(this.get('day') ===2){
+		}else if(this.get('day_id') ===2){
 			return 'Tuesday';
-		}else if(this.get('day') ===3){
+		}else if(this.get('day_id') ===3){
 			return 'Wednesday';
-		}else if(this.get('day') ===4){
+		}else if(this.get('day_id') ===4){
 			return 'Thursday';
-		}else if(this.get('day') ===5){
+		}else if(this.get('day_id') ===5){
 			return 'Friday';
-		}else if(this.get('day') ===6){
+		}else if(this.get('day_id') ===6){
 			return 'Saturday';
-		}else if(this.get('day') ===7){
+		}else if(this.get('day_id') ===7){
 			return 'Sunday';
 		}
 	},
@@ -51,5 +53,5 @@ module.exports = Backbone.Model.extend({
 		}else if(inputLocation ===5){
 			inputLocation = 'South Congress';
 		}
-	}	
+	}
 });
