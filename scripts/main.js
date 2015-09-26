@@ -2,7 +2,7 @@
 var Backbone = require('backbone');
 var $ = require('jquery');
 var EventCollection = require('./collections/EventCollection');
-var EventView= require('./views/EventView');
+var EventView = require('./views/EventView');
 var EventModel = require('./models/EventModel');
 
 var UserCollection = require('./collections/UserCollection');
@@ -14,18 +14,13 @@ var Router = Backbone.Router.extend({
   routes: {
     '': 'landingPage',
     'maps': 'mapsPage',
-    'following': 'followingPage'
+    'profile': 'followingPage'
   },
   landingPage: function(){
     $('section').hide()
     $('#landingPage').show()
     $('#landingPage').append('<form id="username">'+
       '<input type="text">'+
-      '<label><input type="checkbox" name="music-checkbox" value="music">Music</label>'+
-      '<label><input type="checkbox" name="athletics-checkbox" value="athletics">Athletics</label>'+
-      '<label><input type="checkbox" name="tech-checkbox" value="tech">Tech</label>'+
-      '<label><input type="checkbox" name="food-checkbox" value="food">Food</label>'+
-      '<label><input type="checkbox" name="personal-checkbox" value="personal">Personal</label>'+
       '</form>')
   },
   mapsPage: function(){
@@ -87,7 +82,7 @@ $(document).ready(function(){
   var $inputType = $('#inputType');
 
 
-  var newEvent = new EventCollection();
+  var newEvents = new EventCollection();
 
 //UserView
   var userCollection = new UserCollection();
@@ -105,15 +100,14 @@ $(document).ready(function(){
   userCollection.on('add', function(userEvents){
     var x = new UserView({model: userEvents})
     $('#landingPage').append(x.$el);
-    console.log(x.$el)
+
   })
 
-  userCollection.fetch()
+  userCollection.fetch({success: function(response){
+    console.log(response)
+  }})
+  function checkRadioButton(){
 
-  function checkCheckboxes(){
-    if ($('input[type=checkbox]').checked){
-
-    }
   }
 
   function onFormSubmit(e){
@@ -133,10 +127,10 @@ $(document).ready(function(){
   }
   $form.on('submit',onFormSubmit);
 
-newEvents.on('add',function(eventX){
-  var eventY = new EventView({model:eventX});
-  $('#landingPage').append(eventY.$el);
-})
+// newEvents.on('add',function(eventX){
+//   var eventY = new EventView({model:eventX});
+//   $('#landingPage').append(eventY.$el);
+// })
 
 
 var app = new Router();
