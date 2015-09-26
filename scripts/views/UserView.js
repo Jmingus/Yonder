@@ -2,6 +2,7 @@ var Backbone = require('backbone')
 var _ = require('backbone/node_modules/underscore')
 var $ = require('jquery')
 module.exports = Backbone.View.extend({
+  tagName: 'div',
   initialize: function(){
     _.bindAll(
       this,
@@ -11,8 +12,6 @@ module.exports = Backbone.View.extend({
   },
   template: _.template($('#landingPage-template').html()),
   render: function(){
-    console.log(this.$el)
     this.$el.html(this.template(this.model.attributes))
-    console.log(this.model.get('name'))
   }
 })

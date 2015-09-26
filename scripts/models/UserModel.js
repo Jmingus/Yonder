@@ -7,5 +7,5 @@ module.exports = Backbone.Model.extend({
     }],
     preferences: {}
   },
-  urlRoot: 'https://yonder.herokuapp.com/users'
+  urlRoot: 'https://yonder.herokuapp.com/users/1'
 })
