@@ -1,8 +1,11 @@
-@import 'jquery-clockpicker.scss';
-@import "bourbon/bourbon",
+@import "jquery-clockpicker",
+		"bourbon/bourbon",
 		"variables",
 		"mixins",
+		"global",
+		"headings",
 		"header",
 		"events",
 		"map-styles",
-		"global";
+		"footer",
+		"media-queries";

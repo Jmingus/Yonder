@@ -1,0 +1,20 @@
+/* Headings */
+
+h1 {
+	font: {
+		family: $font-heading;
+		@include fntz(2);
+		weight: 700;
+	}
+	padding: 1rem 0 0 2rem;
+	text-transform: lowercase;
+}
+
+h2 {
+	font: {
+		@include fntz(1.25);
+		weight: 500;
+	}
+	padding: 1rem 0 0 2rem;
+}
+
