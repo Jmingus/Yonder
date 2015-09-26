@@ -394,13 +394,14 @@ h1 {
   font-size: 32px;
   font-size: 2rem;
   font-weight: 700;
+  padding: 1rem 0 0 2rem;
   text-transform: lowercase; }
 
 h2 {
   font-size: 20px;
   font-size: 1.25rem;
   font-weight: 500;
-  padding-top: 1rem; }
+  padding: 1rem 0 0 2rem; }
 
 /* Header */
 header {
@@ -440,20 +441,19 @@ nav {
 
 /* Events List */
 .hero {
-  background-color: #999;
+  background-color: #DDDDDD;
+  padding: 2rem;
   text-align: center; }
 
 #tagline {
   font-family: "Roboto Slab", serif;
   font-size: 32px;
   font-size: 2rem;
-  font-weight: 400;
-  padding-top: 2rem; }
+  font-weight: 400; }
 
 #tagline-sub {
   font-style: italic;
-  font-weight: 400;
-  padding-bottom: 2rem; }
+  font-weight: 400; }
 
 .event {
   background-color: #444444;
@@ -462,10 +462,21 @@ nav {
   .event .event-info {
     box-sizing: border-box;
     float: left;
-    padding: 1rem 2rem;
     width: 50%; }
+    .event .event-info .toggle {
+      box-sizing: border-box;
+      padding: 0.5rem 0 0.5rem 2rem;
+      width: 100%; }
+      .event .event-info .toggle a {
+        background-color: #515151;
+        border-radius: 0.25rem;
+        color: #FFFFFF;
+        font-style: italic;
+        font-weight: 300;
+        margin-left: -0.5rem;
+        padding: 0.5rem; }
   .event .event-photo {
-    background: #444444 url(../images/dino-1.gif) center center no-repeat;
+    background: linear-gradient(rgba(0, 172, 178, 0.75), rgba(0, 172, 178, 0.75)), url(../images/dino-1.gif) center center no-repeat;
     background-size: cover;
     float: right;
     height: 12rem;
@@ -476,15 +487,19 @@ nav {
     display: none;
     padding: 1rem 2rem; }
   .event .time {
-    padding-top: 0.5rem; }
+    padding: 0.5rem 0 0 2rem; }
+  .event .location {
+    padding-left: 2rem; }
   .event:nth-child(odd) {
     background-color: #2b2b2b; }
     .event:nth-child(odd) .event-info {
       float: right; }
     .event:nth-child(odd) .event-photo {
-      background: #444444 url(../images/dino-2.jpg) center center no-repeat;
+      background: linear-gradient(rgba(0, 172, 178, 0.75), rgba(0, 172, 178, 0.75)), url(../images/dino-2.jpg) center center no-repeat;
       background-size: cover;
       float: left; }
+    .event:nth-child(odd) .toggle a {
+      background-color: #3f3f3f; }
 
 /* Map Styles */
 html, body {
@@ -501,8 +516,26 @@ html, body {
 
 /* Footer */
 footer {
-  background-color: #DDDDDD;
+  background-color: #999;
   clear: both;
   font-weight: 300;
   padding: 1rem;
   text-align: center; }
+
+/* Media Queries */
+@media screen and (min-width: 480px) {
+  .hero {
+    padding: 5rem; }
+  #tagline {
+    font-size: 36px;
+    font-size: 2.25rem; }
+  #tagline-sub {
+    font-size: 18.4px;
+    font-size: 1.15rem; }
+  .event .event-photo {
+    float: left;
+    width: 12rem; }
+  .event:nth-child(odd) .event-photo {
+    float: left; }
+  .event:nth-child(odd) .event-info {
+    float: left; } }

@@ -1,0 +1,43 @@
+/* Media Queries */
+
+@media screen and (min-width: 480px) {
+
+	.hero {
+		padding: 5rem;
+	}
+
+	#tagline {
+		font: {
+			@include fntz(2.25);
+		}
+	}
+
+	#tagline-sub {
+		font: {
+			@include fntz(1.15);
+		}
+	}
+
+	.event {
+
+		.event-photo {
+			float: left;
+			width: 12rem;
+		}
+
+		&:nth-child(odd) {
+
+			.event-photo {
+				float: left;
+			}
+
+			.event-info {
+				float: left;
+			}
+
+		}
+
+	}
+
+}
+
