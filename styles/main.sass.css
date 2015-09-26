@@ -365,6 +365,43 @@
 
 /* Variables */
 /* Mixins */
+/* Global Styles */
+body {
+  color: #FFFFFF;
+  font-family: "Roboto", sans-serif; }
+
+p {
+  line-height: 1.6em; }
+
+a {
+  text-decoration: none; }
+
+::-moz-selection {
+  background-color: #444444;
+  color: #FFFFFF; }
+
+::selection {
+  background-color: #444444;
+  color: #FFFFFF; }
+
+#mapsPage,
+#followingPage {
+  display: none; }
+
+/* Headings */
+h1 {
+  font-family: "Roboto Slab", serif;
+  font-size: 32px;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: lowercase; }
+
+h2 {
+  font-size: 20px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  padding-top: 1rem; }
+
 /* Header */
 header {
   background-color: #FF802F;
@@ -374,7 +411,7 @@ header {
   float: left;
   margin-left: 1rem; }
   .logo p {
-    color: white;
+    color: #FFFFFF;
     font-family: "Roboto Slab", serif;
     font-size: 28px;
     font-size: 1.75rem;
@@ -382,30 +419,28 @@ header {
 
 .menu-link {
   float: right;
-  margin: 0.6rem 1rem 0 0; }
+  margin: 0.5rem 1rem 0 0; }
   .menu-link a {
-    color: white;
-    font-size: 20px;
-    font-size: 1.25rem;
+    color: #FFFFFF;
+    font-weight: 500;
     text-transform: uppercase; }
 
 nav {
-  background-color: #B25010; }
+  background-color: #B25010;
+  display: none; }
   nav ul {
-    padding: 0.85rem 0;
+    padding: 1rem 0;
     text-align: center; }
     nav ul li {
       display: inline;
-      padding: 1rem; }
+      padding: 1.25rem; }
       nav ul li a {
-        color: white;
-        font-size: 18.4px;
-        font-size: 1.15rem;
+        color: #FFFFFF;
         text-transform: uppercase; }
 
 /* Events List */
 .hero {
-  background-color: grey;
+  background-color: #999;
   text-align: center; }
 
 #tagline {
@@ -420,6 +455,37 @@ nav {
   font-weight: 400;
   padding-bottom: 2rem; }
 
+.event {
+  background-color: #444444;
+  clear: both;
+  overflow: hidden; }
+  .event .event-info {
+    box-sizing: border-box;
+    float: left;
+    padding: 1rem 2rem;
+    width: 50%; }
+  .event .event-photo {
+    background: #444444 url(../images/dino-1.gif) center center no-repeat;
+    background-size: cover;
+    float: right;
+    height: 12rem;
+    overflow: hidden;
+    width: 50%; }
+  .event .more-info {
+    clear: both;
+    display: none;
+    padding: 1rem 2rem; }
+  .event .time {
+    padding-top: 0.5rem; }
+  .event:nth-child(odd) {
+    background-color: #2b2b2b; }
+    .event:nth-child(odd) .event-info {
+      float: right; }
+    .event:nth-child(odd) .event-photo {
+      background: #444444 url(../images/dino-2.jpg) center center no-repeat;
+      background-size: cover;
+      float: left; }
+
 /* Map Styles */
 html, body {
   height: 100%;
@@ -433,21 +499,10 @@ html, body {
   height: 100%;
   width: 100%; }
 
-/* Global Styles */
-body {
-  color: #444444;
-  font-family: "Roboto", sans-serif; }
-
-p {
-  line-height: 1.6em; }
-
-a {
-  text-decoration: none; }
-
-::-moz-selection {
-  background-color: black;
-  color: white; }
-
-::selection {
-  background-color: black;
-  color: white; }
+/* Footer */
+footer {
+  background-color: #DDDDDD;
+  clear: both;
+  font-weight: 300;
+  padding: 1rem;
+  text-align: center; }

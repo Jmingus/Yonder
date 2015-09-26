@@ -1,7 +1,7 @@
 /* Global Styles */
 
 body {
-	color: $color-text;
+	color: $color-contrast;
 	font: {
 		family: $font-main;
 	}
@@ -16,7 +16,12 @@ a {
 }
 
 @include selection {
-  background-color: black;
-  color: white;
+  background-color: $color-neutral-dark;
+  color: $color-contrast;
+}
+
+#mapsPage,
+#followingPage {
+	display: none;
 }
 

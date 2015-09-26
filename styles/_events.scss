@@ -1,7 +1,7 @@
 /* Events List */
 
 .hero {
-	background-color: grey;
+	background-color: #999;
 	text-align: center;
 }
 
@@ -20,5 +20,53 @@
 		weight: 400;
 	}
 	padding-bottom: 2rem;
+}
+
+.event {
+	background-color: $color-neutral-dark;
+	clear: both;
+	overflow: hidden;
+
+	.event-info {
+		box-sizing: border-box;
+		float: left;
+		padding: 1rem 2rem;
+		width: 50%;
+	}
+
+	.event-photo {
+		background: $color-neutral-dark url(../images/dino-1.gif) center center no-repeat;
+		background-size: cover;
+		float: right;
+		height: 12rem;
+		overflow: hidden;
+		width: 50%;
+	}
+
+	.more-info {
+		clear: both;
+		display: none;
+		padding: 1rem 2rem;
+	}
+
+	.time {
+		padding-top: 0.5rem;
+	}
+
+	&:nth-child(odd) {
+		background-color: darken($color-neutral-dark, 10%);
+
+		.event-info {
+			float: right;
+		}
+
+		.event-photo {
+			background: $color-neutral-dark url(../images/dino-2.jpg) center center no-repeat;
+			background-size: cover;
+			float: left;
+		}
+
+	}
+
 }
 
