@@ -132,6 +132,14 @@ $(document).ready(function(){
 //   $('#landingPage').append(eventY.$el);
 // })
 
+//Jquery page interactions
+var $menuLink = $('.menu-link');
+var $topNav = $('nav');
+$menuLink.on('click',function(){
+  $topNav.toggle();
+  console.log('hello father');
+})
+
 
 var app = new Router();
 Backbone.history.start();

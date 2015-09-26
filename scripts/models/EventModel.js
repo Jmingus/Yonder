@@ -8,7 +8,7 @@ module.exports = Backbone.Model.extend({
 		location: null,
 		categories: null
 	},
-	urlRoot: 'http://tiyfe.herokuapp.com/collections/EventLogging',
+	urlRoot: 'https://yonder.herokuapp.com/events',
 	getDayString: function(){
 		if(this.get('day') ===1){
 			return  'Monday';
