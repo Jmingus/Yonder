@@ -23,9 +23,6 @@ var Router = Backbone.Router.extend({
     $('#eventsPage').show();
     newEvents.on('add',userEvent);
     newEvents.fetch({success: function(response){
-        console.log(newEvents.parse(response, function(){
-            console.log(this.get('day_id'))
-        }))
     }});
   },
   mapsPage: function(){
