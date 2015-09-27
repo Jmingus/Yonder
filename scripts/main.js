@@ -158,6 +158,15 @@ var $addEventDiv = $('#addEventDiv');
 var $followingClick= $('#followingClick');
 var $followingMoreInfo = $('#followingMoreInfo');
 
+var $mapsTuggle = $('#mapsFilterTuggle');
+var $mapsFilter = $('#mapsFilter');
+
+var $mapEventTaggle =$('#mapEventTaggle');
+var $mapEventDiv = $('#mapEventDiv');
+
+var $mapEventTaggle2 =$('#mapEventTaggle2');
+var $mapEventDiv2 = $('#mapEventDiv2');
+
 $menuLink.on('click',function(){
   $smNav.toggle();
 })
@@ -167,7 +176,6 @@ $preferenceLink.on('click',function(){
 })
 $taggle.on('click',function(){
   $moreInfoDiv.toggle();
-  console.log('dont you know that');
 })
 $addEvent.on('click',function(){
   $addEventDiv.toggle();
@@ -175,6 +183,17 @@ $addEvent.on('click',function(){
 $followingClick.on('click',function(){
   $followingMoreInfo.toggle();
 })
+$mapsTuggle.on('click',function(){
+  $mapsFilter.toggle();
+})
+$mapEventTaggle.on('click',function(){
+  $mapEventDiv.toggle();
+})
+$mapEventTaggle2.on('click',function(){
+  $mapEventDiv2.toggle();
+})
+
+
 });
 
 

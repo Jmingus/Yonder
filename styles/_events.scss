@@ -64,14 +64,61 @@
 		    rgba(0, 172, 178, 0.75), 
 		    rgba(0, 172, 178, 0.75)
 		    ), 
-		    url(../images/dino-1.gif) center center no-repeat;
+		    url(../images/music.jpg) center center no-repeat;
 		background-size: cover;
 		float: right;
 		height: 12rem;
 		overflow: hidden;
 		width: 50%;
 	}
-
+	.event-photo {
+		background: linear-gradient(
+		    rgba(0, 172, 178, 0.75), 
+		    rgba(0, 172, 178, 0.75)
+		    ), 
+		    url(../images/food.jpg) center center no-repeat;
+		background-size: cover;
+		float: right;
+		height: 12rem;
+		overflow: hidden;
+		width: 50%;
+	}
+	.event-photo {
+		background: linear-gradient(
+		    rgba(0, 172, 178, 0.75), 
+		    rgba(0, 172, 178, 0.75)
+		    ), 
+		    url(../images/tech.jpg) center center no-repeat;
+		background-size: cover;
+		float: right;
+		height: 12rem;
+		overflow: hidden;
+		width: 50%;
+	}
+	.event-photo {
+		background: linear-gradient(
+		    rgba(0, 172, 178, 0.75), 
+		    rgba(0, 172, 178, 0.75)
+		    ), 
+		    url(../images/food.jpg) center center no-repeat;
+		background-size: cover;
+		float: right;
+		height: 12rem;
+		overflow: hidden;
+		width: 50%;
+	}
+	.event-photo {
+		background: linear-gradient(
+		    rgba(0, 172, 178, 0.75), 
+		    rgba(0, 172, 178, 0.75)
+		    ), 
+		    url(../images/personals.jpg) center center no-repeat;
+		background-size: cover;
+		float: right;
+		height: 12rem;
+		overflow: hidden;
+		width: 50%;
+	}
 	.more-info {
 		clear: both;
 		display: none;
@@ -98,7 +145,7 @@
 		    rgba(0, 172, 178, 0.75), 
 		    rgba(0, 172, 178, 0.75)
 		    ), 
-		    url(../images/dino-2.jpg) center center no-repeat;
+		    url(../images/music.jpg) center center no-repeat;
 			background-size: cover;
 			float: left;
 		}
