@@ -1,7 +1,7 @@
 /* Global Styles */
 
 body {
-	color: $color-contrast;
+	color: $color-text;
 	font: {
 		family: $font-main;
 	}
@@ -21,11 +21,11 @@ a {
 }
 
 #mapsPage,
-#followingPage {
+#landingPage {
 	display: none;
 }
 
 .wrapper {
-	background-color: $color-neutral-dark;
+	background-color: $color-contrast;
 }
 
