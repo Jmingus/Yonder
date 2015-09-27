@@ -385,7 +385,7 @@ a {
   color: #FFFFFF; }
 
 #mapsPage,
-#landingPage {
+#followingPage {
   display: none; }
 
 .wrapper {
@@ -453,17 +453,19 @@ header {
   text-align: center; }
 
 #tagline {
+  color: #FFFFFF;
   font-family: "Roboto Slab", serif;
   font-size: 32px;
   font-size: 2rem;
   font-weight: 400; }
 
 #tagline-sub {
+  color: #FFFFFF;
   font-style: italic;
   font-weight: 400; }
 
 .event {
-  background-color: #666666;
+  background-color: #DDDDDD;
   clear: both;
   overflow: hidden; }
   .event .event-info {
@@ -475,7 +477,7 @@ header {
       padding: 0.5rem 0 0.5rem 2rem;
       width: 100%; }
       .event .event-info .toggle a {
-        background-color: #737373;
+        background-color: #d0d0d0;
         border-radius: 0.25rem;
         color: #FFFFFF;
         font-style: italic;
@@ -498,7 +500,7 @@ header {
   .event .location {
     padding-left: 2rem; }
   .event:nth-child(odd) {
-    background-color: gray; }
+    background-color: #c4c4c4; }
     .event:nth-child(odd) .event-info {
       float: right; }
     .event:nth-child(odd) .event-photo {
@@ -506,7 +508,7 @@ header {
       background-size: cover;
       float: left; }
     .event:nth-child(odd) .toggle a {
-      background-color: #8c8c8c; }
+      background-color: #b7b7b7; }
 
 article.event:nth-child(n+9) {
   display: none; }
@@ -649,7 +651,7 @@ footer {
     width: 25%; }
   .event .more-info {
     display: block;
-    padding: 0 0 2rem 14rem; }
+    padding: 0 0 2rem 12rem; }
   .event:nth-child(odd) .event-photo {
     float: left; }
   .event:nth-child(odd) .event-info {
