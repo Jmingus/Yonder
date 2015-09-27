@@ -64,7 +64,7 @@
 		    rgba(0, 172, 178, 0.75), 
 		    rgba(0, 172, 178, 0.75)
 		    ), 
-		    url(../images/dino-1.gif) center center no-repeat;
+		    url(../images/music.jpg) center center no-repeat;
 		background-size: cover;
 		float: right;
 		height: 12rem;
@@ -94,12 +94,6 @@
 		}
 
 		.event-photo {
-			background: linear-gradient(
-		    rgba(0, 172, 178, 0.75), 
-		    rgba(0, 172, 178, 0.75)
-		    ), 
-		    url(../images/dino-2.jpg) center center no-repeat;
-			background-size: cover;
 			float: left;
 		}
 
@@ -107,6 +101,61 @@
 			background-color: darken($color-neutral-light, 15%);
 		}
 
+	}
+
+	&:nth-child(3) {
+		.event-photo {
+			background: linear-gradient(
+		    rgba(0, 172, 178, 0.75), 
+		    rgba(0, 172, 178, 0.75)
+		    ), 
+		    url(../images/food.jpg) center center no-repeat;
+			background-size: cover;
+		}
+	}
+
+	&:nth-child(4) {
+		.event-photo {
+			background: linear-gradient(
+		    rgba(0, 172, 178, 0.75), 
+		    rgba(0, 172, 178, 0.75)
+		    ), 
+		    url(../images/tech.jpg) center center no-repeat;
+			background-size: cover;
+		}
+	}
+
+	&:nth-child(5) {
+		.event-photo {
+			background: linear-gradient(
+		    rgba(0, 172, 178, 0.75), 
+		    rgba(0, 172, 178, 0.75)
+		    ), 
+		    url(../images/personal.jpg) center center no-repeat;
+			background-size: cover;
+		}
+	}
+
+	&:nth-child(6) {
+		.event-photo {
+			background: linear-gradient(
+		    rgba(0, 172, 178, 0.75), 
+		    rgba(0, 172, 178, 0.75)
+		    ), 
+		    url(../images/sports.jpg) center center no-repeat;
+			background-size: cover;
+		}
+	}
+
+	&:nth-child(7) {
+		.event-photo {
+			background: linear-gradient(
+		    rgba(0, 172, 178, 0.75), 
+		    rgba(0, 172, 178, 0.75)
+		    ), 
+		    url(../images/music.jpg) center center no-repeat;
+			background-size: cover;
+		}
 	}
 
 }
