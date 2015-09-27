@@ -16,7 +16,6 @@
 	background-color: darken($color-neutral-light, 10%);
 	display: none;
 	padding: 1rem 2rem;
-	text-align: center;
 
 	.preferences-title {
 		display: none;
@@ -25,7 +24,6 @@
 	ul {
 
 		li {
-			display: inline-block;
 			padding: 0 1.25rem 0.5rem 1.25rem;
 		}
 
