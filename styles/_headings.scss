@@ -7,10 +7,10 @@ h1 {
 		weight: 700;
 	}
 	padding: 1rem 0 0 2rem;
-	text-transform: lowercase;
 }
 
 h2 {
+	color: $color-neutral-dark;
 	font: {
 		@include fntz(1.25);
 		weight: 500;
