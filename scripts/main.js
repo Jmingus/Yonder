@@ -7,8 +7,10 @@ var EventModel = require('./models/EventModel');
 
 var UserCollection = require('./collections/UserCollection');
 var UserModel = require('./models/UserModel');
-var UserView = require('./views/UserView')
-
+var UserView = require('./views/UserView');
+var newEvents = new EventCollection();
+var _ =require('backbone/node_modules/underscore');
+var currentUser = 1;
 //Router
 var Router = Backbone.Router.extend({
   routes: {
@@ -18,10 +20,10 @@ var Router = Backbone.Router.extend({
   },
   landingPage: function(){
     $('section').hide()
-    $('#landingPage').show()
-    $('#landingPage').append('<form id="username">'+
-      '<input type="text">'+
-      '</form>')
+    $('#landingPage').show();
+    newEvents.on('add',userEvent);
+    newEvents.fetch();
+
   },
   mapsPage: function(){
     $('section').hide()
@@ -33,6 +35,15 @@ var Router = Backbone.Router.extend({
   }
 });
 
+var app = new Router();
+Backbone.history.start();
+
+function userEvent(model){
+  // console.log(temp(model.attributes));
+  var y = new EventView({model: model});
+
+  $('#profile').append(y.$el);
+}
 //Google Maps Api Stuff
 
 function initMap() {
@@ -81,9 +92,6 @@ $(document).ready(function(){
   var $inputArea = $('#inputArea');
   var $inputType = $('#inputType');
 
-
-  var newEvents = new EventCollection();
-
 //UserView
   var userCollection = new UserCollection();
 
@@ -92,6 +100,7 @@ $(document).ready(function(){
     console.log($('#username > input').val())
 
     userCollection.create({
+      id: currentUser,
       username: $('#username > input').val()
     });
     console.log('Username Posted')
@@ -104,11 +113,10 @@ $(document).ready(function(){
   })
 
   userCollection.fetch({success: function(response){
-    console.log(response)
+    // response.each(function(items){
+    //   if(items.get('day_id') === 1)
+    // })
   }})
-  function checkRadioButton(){
-
-  }
 
   function onFormSubmit(e){
     e.preventDefault();
@@ -131,10 +139,6 @@ $(document).ready(function(){
 //   var eventY = new EventView({model:eventX});
 //   $('#landingPage').append(eventY.$el);
 // })
-
-
-var app = new Router();
-Backbone.history.start();
 
 });
 
