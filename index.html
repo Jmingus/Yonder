@@ -24,7 +24,7 @@
         <ul>
           <li><a href="#">Events</a></li>
           <li><a href="#maps">Map</a></li>
-          <li><a href="#profile">Profile</a></li>
+          <li><a href="#following">Profile</a></li>
         </ul>
 
       </nav>
@@ -40,14 +40,15 @@
       <ul>
         <li><a href="#">Events</a></li>
         <li><a href="#maps">Map</a></li>
-        <li><a href="#profile">Profile</a></li>
+        <li><a href="#following">Profile</a></li>
       </ul>
 
     </nav>
 
-
     <div class="wrapper">
+
       <section id="eventsPage">
+
         <div class="hero">
 
           <p id="tagline">Life is happening</p>
@@ -81,12 +82,92 @@
             </article>
 
       </section>
+
     <section id="mapsPage">
     <div id="map"></div>
     </section>
 
-    <section id="profilePage">Following
-    	<div>
+    <section id="followingPage">
+
+      <div class="preferences-link">
+        <p><a href="#">Preferences <i class="fa fa-chevron-down"></i></a></p>
+      </div>
+
+      <div class="preferences">
+        <p class="preferences-title">Preferences</p>
+        <ul>
+          <li>x Food</li>
+          <li>x Music</li>
+          <li>x Personals</li>
+          <li>x Sports</li>
+          <li>x Tech</li>
+        </ul>
+      </div>
+
+        <div class="user">
+
+          <div class="user-photo"></div>
+
+          <div class="user-info">
+            <p id="user-id">amacduff's Events</p>
+            <p id="user-sub">Events you are following</p>
+          </div>
+
+        </div>
+
+        <div class="add-event">
+
+          <p><a href="#"><i class="fa fa-plus"></i> Add Event</a></p>
+
+        </div>
+
+        <article class="following">
+
+          <div class="following-info">
+
+            <h1 class="following-name">Event</h1>
+
+            <div class="toggle">
+              <p><a href="#"><i class="fa fa-chevron-down"></i></a></p>
+            </div>
+
+            <h2 class="following-location">Location</h2>
+
+          </div>
+
+          <div class="more-info">
+
+            <p class="following-time">Time</p>
+            <p class="following-description">Description</p>
+
+          </div>
+
+        </article>
+
+        <article class="following">
+
+          <div class="following-info">
+
+            <h1 class="following-name">Event</h1>
+
+            <div class="toggle">
+              <p><a href="#"><i class="fa fa-chevron-down"></i></a></p>
+            </div>
+
+            <h2 class="following-location">Location</h2>
+
+          </div>
+
+          <div class="more-info">
+
+            <p class="following-time">Time</p>
+            <p class="following-description">Description</p>
+
+          </div>
+
+        </article>
+
+    	<!--<div>-->
     <!-- 		<form id="form"> -->
 <!--     			<input id="inputName" placeholder="Name of Event" type="text">
     			<select id="inputDay" name="Day of the week">
@@ -99,6 +180,7 @@
             <option value="7">Sunday</option>
           <input id="inputTime" placeholder="Time" type="time" name="time">
           <div class="input-group clockpicker" data-placement="left" data-align="top" data-autoclose="true">
+
               <input type="text" class="form-control" value="13:14">
               <span class="input-group-addon">
                 <span class="glyphicon glyphicon-time"></span>
@@ -119,8 +201,9 @@
   					<option value="5">Personal</option>
 				  </select>
           <button id="addEventButton">Add Event</button>
-    		</form> -->
+    		</form>
     	</div>
+    -->
     </section>
 
      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4LwZFVazsCpP77wyAtMKwsgV1QCb6D_k&libraries=places">

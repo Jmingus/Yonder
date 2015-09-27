@@ -16,7 +16,7 @@ var Router = Backbone.Router.extend({
   routes: {
     '': 'eventsPage',
     'maps': 'mapsPage',
-    'profile': 'profilePage'
+    'following': 'followingPage'
   },
   eventsPage: function(){
     $('section').hide()
@@ -32,9 +32,9 @@ var Router = Backbone.Router.extend({
     $('section').hide()
     $('#mapsPage').show()
   },
-  profilePage: function(){
+  followingPage: function(){
     $('section').hide()
-    $('#profilePage').show()
+    $('#followingPage').show()
   }
 });
 

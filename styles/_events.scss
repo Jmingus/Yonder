@@ -109,3 +109,11 @@
 
 }
 
+article.event {
+
+	&:nth-child(n+9) {
+		display: none;
+	}
+
+}
+
