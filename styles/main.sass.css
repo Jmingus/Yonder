@@ -385,7 +385,7 @@ a {
   color: #FFFFFF; }
 
 #mapsPage,
-#followingPage {
+#landingPage {
   display: none; }
 
 .wrapper {
@@ -507,6 +507,41 @@ header {
       float: left; }
     .event:nth-child(odd) .toggle a {
       background-color: #6a6a6a; }
+
+/* Profile */
+.preferences {
+  background-color: #c4c4c4;
+  padding: 0.5rem 0;
+  text-align: center; }
+  .preferences a {
+    color: #444444;
+    font-family: "Roboto Slab", serif;
+    text-transform: lowercase; }
+
+.user {
+  background-color: #DDDDDD;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 1rem 2rem; }
+  .user .user-photo {
+    background: url(../images/user.jpg) center center no-repeat;
+    float: left;
+    height: 4.5rem;
+    width: 4.5rem; }
+  .user .user-info {
+    float: left;
+    margin-left: 1rem; }
+    .user .user-info #user-id {
+      color: #00ACB2;
+      font-family: "Roboto Slab", serif;
+      font-size: 24px;
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-transform: lowercase; }
+    .user .user-info #user-sub {
+      color: #444444;
+      font-style: italic;
+      font-weight: 300; }
 
 /* Map Styles */
 html, body {

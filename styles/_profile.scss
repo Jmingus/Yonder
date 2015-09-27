@@ -1,0 +1,56 @@
+/* Profile */
+
+.preferences {
+	background-color: darken($color-neutral-light, 10%);
+	padding: 0.5rem 0;
+	text-align: center;
+
+	a {
+		color: $color-text;
+		font: {
+			family: $font-heading;
+		}
+		text-transform: lowercase;
+	}
+
+}
+
+.user {
+	background-color: $color-neutral-light;
+	box-sizing: border-box;
+	overflow: hidden;
+	padding: 1rem 2rem;
+
+	.user-photo {
+		background: url(../images/user.jpg) center center no-repeat;
+		float: left;
+		height: 4.5rem;
+		width: 4.5rem;
+	}
+
+	.user-info {
+		float: left;
+		margin-left: 1rem;
+
+		#user-id {
+			color: $color-accent;
+			font: {
+				family: $font-heading;
+				@include fntz(1.5);
+				weight: 700;
+			}
+			text-transform: lowercase;
+		}
+
+		#user-sub {
+			color: $color-text;
+			font: {
+				style: italic;
+				weight: 300;
+			}
+		}
+
+	}
+
+}
+
