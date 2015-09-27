@@ -147,10 +147,10 @@ $(document).ready(function(){
 
 //JQUERY ACTIONS
 var $menuLink = $('.menu-link');
-var $topNav = $('.nav-sm');
+var $smNav = $('.nav-sm');
 
 var $taggle = $('#taggle');
-var $moreInfoDiv = $('.more-info');
+var $moreInfoDiv = $('#taggleDiv');
 
 var $preferenceLink=$('#preferences-link');
 var $preferences = $('.preferences');
@@ -162,7 +162,7 @@ var $followingClick= $('#followingClick');
 var $followingMoreInfo = $('#followingMoreInfo');
 
 $menuLink.on('click',function(){
-  $topNav.toggle();
+  $smNav.toggle();
 })
 $preferenceLink.on('click',function(){
   $preferences.toggle();
@@ -170,6 +170,7 @@ $preferenceLink.on('click',function(){
 })
 $taggle.on('click',function(){
   $moreInfoDiv.toggle();
+  console.log('dont you know that');
 })
 $addEvent.on('click',function(){
   $addEventDiv.toggle();
