@@ -11,7 +11,6 @@ module.exports = Backbone.View.extend({
 		this.render();
 	},
 	render: function(){
-		console.log(this.model);
 		this.$el.html(this.template(this.model.toJSON()));
 	},
 	unfollow: function(){
