@@ -20,21 +20,18 @@ var Router = Backbone.Router.extend({
     'following': 'followingPage'
   },
   eventsPage: function(){
-    $('section').hide()
+    $('section').hide();
     $('#eventsPage').show();
     newEvents.on('add',userEvent);
     newEvents.fetch({success: function(response){
-        console.log(newEvents.parse(response, function(){
-            console.log(this.get('day_id'))
-        }))
     }});
   },
   mapsPage: function(){
-    $('section').hide()
+    $('section').hide();
     $('#mapsPage').show()
   },
   followingPage: function(){
-    $('section').hide()
+    $('section').hide();
     $('#followingPage').show()
   }
 });
@@ -89,7 +86,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 google.maps.event.addDomListener(window, 'load', initMap)
 //DOM Code
 $(document).ready(function(){
-  var $form = $('#form');
+  var $form = $('form');
   var $inputName = $('#inputName');
   var $inputDay = $('#inputDay');
   var $inputTime= $('#inputTime');
@@ -100,7 +97,7 @@ $(document).ready(function(){
   var userCollection = new UserCollection();
 
   $('#username').submit(function(e){
-    e.preventDefault
+    e.preventDefault;
     console.log($('#username > input').val())
 
     userCollection.create({
@@ -116,33 +113,33 @@ $(document).ready(function(){
 
   })
 
-  userCollection.fetch({success: function(response){
-    // response.each(function(items){
-    //   if(items.get('day_id') === 1)
-    // })
-  }})
+  userCollection.fetch();
 
-  function onFormSubmit(e){
-    e.preventDefault();
-      newEvents.create({
+  function onFormSubmit(){
+      var daySection = null;
+      daySection.slice()
+      console.log($inputTime.val());
+      var newEvent = new UserModel({
         name: $inputName.val(),
-        day: parseInt($inputDay.val()),
-        time: $inputTime.val(),
-        location: parseInt($inputArea.val()),
-        categories: parseInt($inputType.val())
+        day_id: parseInt($inputDay.val()),
+        specific_time: $inputTime.val(),
+        venue: parseInt($inputArea.val()),
+        category_id: parseInt($inputType.val())
     });
 
+    $.post('https://yonder.herokuapp.com/events', newEvent.attributes).done(function(response){
+          userCollection.add(response)
+    });
     console.log($inputName.val());
     console.log(parseInt($inputDay.val()));
     console.log(parseInt($inputArea.val()));
     console.log(parseInt($inputType.val()));
   }
-  $form.on('submit',onFormSubmit);
+    $form.on('submit',function(e){
+        e.preventDefault();
+        onFormSubmit();
+    });
 
-// newEvents.on('add',function(eventX){
-//   var eventY = new EventView({model:eventX});
-//   $('#landingPage').append(eventY.$el);
-// })
 
 
 //JQUERY ACTIONS
