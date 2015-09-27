@@ -14,24 +14,27 @@ var currentUser = 1;
 //Router
 var Router = Backbone.Router.extend({
   routes: {
-    '': 'landingPage',
+    '': 'eventsPage',
     'maps': 'mapsPage',
-    'profile': 'followingPage'
+    'profile': 'profilePage'
   },
-  landingPage: function(){
+  eventsPage: function(){
     $('section').hide()
-    $('#landingPage').show();
+    $('#eventsPage').show();
     newEvents.on('add',userEvent);
-    newEvents.fetch();
-
+    newEvents.fetch({success: function(response){
+        console.log(newEvents.parse(response, function(){
+            console.log(this.get('day_id'))
+        }))
+    }});
   },
   mapsPage: function(){
     $('section').hide()
     $('#mapsPage').show()
   },
-  followingPage: function(){
+  profilePage: function(){
     $('section').hide()
-    $('#followingPage').show()
+    $('#profilePage').show()
   }
 });
 
@@ -42,7 +45,7 @@ function userEvent(model){
   // console.log(temp(model.attributes));
   var y = new EventView({model: model});
 
-  $('#profile').append(y.$el);
+  $('#eventsPage').append(y.$el);
 }
 //Google Maps Api Stuff
 

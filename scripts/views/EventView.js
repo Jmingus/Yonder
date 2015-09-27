@@ -3,16 +3,16 @@ var Backbone = require('backbone');
 var _ = require('backbone/node_modules/underscore');
 
 module.exports = Backbone.View.extend({
-	tagName: 'div',
+	tagName: 'article',
+    className: 'event',
 	template: _.template($('#events-template').html()),
 	initialize: function(){
-		// this.model.on('sync',this.render);
+		//this.model.on('sync',this.render);
 		this.render();
 	},
 	render: function(){
 		console.log(this.model);
 		this.$el.html(this.template(this.model.toJSON()));
-		return this;
 	},
 	unfollow: function(){
 		this.$el.remove();
