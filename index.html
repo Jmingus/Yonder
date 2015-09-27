@@ -156,8 +156,8 @@
 
     <section id="followingPage">
 
-      <div class="preferences-link">
-        <p><a href="#">Preferences <i class="fa fa-chevron-down"></i></a></p>
+      <div class="preferences-link" id="preferences-link">
+        <p><a>Preferences <i class="fa fa-chevron-down"></i></a></p>
       </div>
 
       <div class="preferences">
@@ -184,7 +184,8 @@
 
         <div class="add-event">
 
-          <p><a href="#"><i class="fa fa-plus"></i> Add Event</a></p>
+          <p><a href="#following"><i class="fa fa-plus" id="addEventDiv"></i> Add Event</a></p>
+
 
         </div>
 
@@ -194,15 +195,15 @@
 
             <h1 class="following-name">Event</h1>
 
-            <div class="toggle">
-              <p><a href="#"><i class="fa fa-chevron-down"></i></a></p>
+            <div class="toggle" id="followingClick">
+              <p><a href="#following"><i class="fa fa-chevron-down"></i></a></p>
             </div>
 
             <h2 class="following-location">Location</h2>
 
           </div>
 
-          <div class="more-info">
+          <div class="more-info" id="followingMoreInfo">
 
             <p class="following-time">Time</p>
             <p class="following-description">Description</p>
@@ -217,15 +218,15 @@
 
             <h1 class="following-name">Event</h1>
 
-            <div class="toggle">
-              <p><a href="#"><i class="fa fa-chevron-down"></i></a></p>
+            <div class="toggle" id="taggle">
+              <p ><a href="#following"><i class="fa fa-chevron-down"></i></a></p>
             </div>
 
             <h2 class="following-location">Location</h2>
 
           </div>
 
-          <div class="more-info">
+          <div class="more-info" id="followingMoreInfo">
 
             <p class="following-time">Time</p>
             <p class="following-description">Description</p>
@@ -234,9 +235,20 @@
 
         </article>
 
+    </section>    
+<!--     <section id="mapsPage">
+      <div id="map"></div> -->
+    
+    </section>
+    <section id="followingPage">Following
+    	<div>
+    		<form id="form">
+    			<input id="inputName" placeholder="Name of Event" type="text">
+
     	<!--<div>-->
     <!-- 		<form id="form"> -->
 <!--     			<input id="inputName" placeholder="Name of Event" type="text">
+>>>>>>> 2b40dc24012fc144f7322bb2e52608fa94d7b413
     			<select id="inputDay" name="Day of the week">
             <option value="1">Monday</option>
             <option value="2">Tuesday</option>

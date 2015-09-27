@@ -10,6 +10,7 @@ var UserModel = require('./models/UserModel');
 var UserView = require('./views/UserView');
 var newEvents = new EventCollection();
 var _ =require('backbone/node_modules/underscore');
+
 var currentUser = 1;
 //Router
 var Router = Backbone.Router.extend({
@@ -143,6 +144,39 @@ $(document).ready(function(){
 //   $('#landingPage').append(eventY.$el);
 // })
 
+
+//JQUERY ACTIONS
+var $menuLink = $('.menu-link');
+var $topNav = $('.nav-sm');
+
+var $taggle = $('#taggle');
+var $moreInfoDiv = $('.more-info');
+
+var $preferenceLink=$('#preferences-link');
+var $preferences = $('.preferences');
+
+var $addEvent = $('.add-event');
+var $addEventDiv = $('#addEventDiv');
+
+var $followingClick= $('#followingClick');
+var $followingMoreInfo = $('#followingMoreInfo');
+
+$menuLink.on('click',function(){
+  $topNav.toggle();
+})
+$preferenceLink.on('click',function(){
+  $preferences.toggle();
+
+})
+$taggle.on('click',function(){
+  $moreInfoDiv.toggle();
+})
+$addEvent.on('click',function(){
+  $addEventDiv.toggle();
+})
+$followingClick.on('click',function(){
+  $followingMoreInfo.toggle();
+})
 });
 
 
