@@ -657,7 +657,7 @@ footer {
 @media screen and (min-width: 600px) {
   .menu-link {
     display: none; }
-  .nav-sm {
+  nav.nav-sm {
     display: none; }
   .nav-lg {
     display: inline;
