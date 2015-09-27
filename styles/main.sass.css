@@ -423,6 +423,8 @@ header {
     font-weight: 700; }
     .logo p:first-letter {
       letter-spacing: -0.1rem; }
+    .logo p a {
+      color: #FFFFFF; }
 
 .menu-link {
   float: right;
@@ -620,7 +622,6 @@ article.event:nth-child(n+9) {
       padding: 0 1.25rem 0.5rem 1.25rem; }
 
 #map {
-  background-color: red;
   height: 18.75rem;
   overflow: hidden; }
 
@@ -655,6 +656,8 @@ footer {
 /* Media Queries */
 @media screen and (min-width: 600px) {
   .menu-link {
+    display: none; }
+  nav.nav-sm {
     display: none; }
   .nav-lg {
     display: inline;
