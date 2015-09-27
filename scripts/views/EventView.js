@@ -2,7 +2,7 @@ var Backbone = require('backbone');
 var _ =require('backbone/node_modules/underscore');
 module.export = Backbone.View.extend({
 	tagName: 'section',
-	intitalize:function(){
+	initialize:function(){
 		_.bindAll(
 			this,
 			'render',

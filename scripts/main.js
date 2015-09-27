@@ -135,8 +135,10 @@ $(document).ready(function(){
 //Jquery page interactions
 var $menuLink = $('.menu-link');
 var $topNav = $('.nav-sm');
+
 $menuLink.on('click',function(){
   $topNav.toggle();
+  console.log('hello father');
 })
 
 
