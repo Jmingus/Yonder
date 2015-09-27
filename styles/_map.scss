@@ -71,3 +71,11 @@
 	}
 }
 
+article.mapEvent {
+
+	&:nth-child(n+12) {
+		display: none;
+	}
+
+}
+
