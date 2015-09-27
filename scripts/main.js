@@ -7,21 +7,27 @@ var EventModel = require('./models/EventModel');
 
 var UserCollection = require('./collections/UserCollection');
 var UserModel = require('./models/UserModel');
-var UserView = require('./views/UserView')
+var UserView = require('./views/UserView');
+var newEvents = new EventCollection();
+var _ =require('backbone/node_modules/underscore');
 
+var currentUser = 1;
 //Router
 var Router = Backbone.Router.extend({
   routes: {
-    '': 'landingPage',
+    '': 'eventsPage',
     'maps': 'mapsPage',
-    'profile': 'followingPage'
+    'following': 'followingPage'
   },
-  landingPage: function(){
+  eventsPage: function(){
     $('section').hide()
-    $('#landingPage').show()
-    $('#landingPage').append('<form id="username">'+
-      '<input type="text">'+
-      '</form>')
+    $('#eventsPage').show();
+    newEvents.on('add',userEvent);
+    newEvents.fetch({success: function(response){
+        console.log(newEvents.parse(response, function(){
+            console.log(this.get('day_id'))
+        }))
+    }});
   },
   mapsPage: function(){
     $('section').hide()
@@ -33,6 +39,15 @@ var Router = Backbone.Router.extend({
   }
 });
 
+var app = new Router();
+Backbone.history.start();
+
+function userEvent(model){
+  // console.log(temp(model.attributes));
+  var y = new EventView({model: model});
+
+  $('#eventsPage').append(y.$el);
+}
 //Google Maps Api Stuff
 
 function initMap() {
@@ -81,9 +96,6 @@ $(document).ready(function(){
   var $inputArea = $('#inputArea');
   var $inputType = $('#inputType');
 
-
-  var newEvents = new EventCollection();
-
 //UserView
   var userCollection = new UserCollection();
 
@@ -92,6 +104,7 @@ $(document).ready(function(){
     console.log($('#username > input').val())
 
     userCollection.create({
+      id: currentUser,
       username: $('#username > input').val()
     });
     console.log('Username Posted')
@@ -104,11 +117,10 @@ $(document).ready(function(){
   })
 
   userCollection.fetch({success: function(response){
-    console.log(response)
+    // response.each(function(items){
+    //   if(items.get('day_id') === 1)
+    // })
   }})
-  function checkRadioButton(){
-
-  }
 
   function onFormSubmit(e){
     e.preventDefault();
@@ -132,19 +144,39 @@ $(document).ready(function(){
 //   $('#landingPage').append(eventY.$el);
 // })
 
-//Jquery page interactions
+
+//JQUERY ACTIONS
 var $menuLink = $('.menu-link');
 var $topNav = $('.nav-sm');
 
+var $taggle = $('#taggle');
+var $moreInfoDiv = $('.more-info');
+
+var $preferenceLink=$('#preferences-link');
+var $preferences = $('.preferences');
+
+var $addEvent = $('.add-event');
+var $addEventDiv = $('#addEventDiv');
+
+var $followingClick= $('#followingClick');
+var $followingMoreInfo = $('#followingMoreInfo');
+
 $menuLink.on('click',function(){
   $topNav.toggle();
-  console.log('hello father');
 })
+$preferenceLink.on('click',function(){
+  $preferences.toggle();
 
-
-var app = new Router();
-Backbone.history.start();
-
+})
+$taggle.on('click',function(){
+  $moreInfoDiv.toggle();
+})
+$addEvent.on('click',function(){
+  $addEventDiv.toggle();
+})
+$followingClick.on('click',function(){
+  $followingMoreInfo.toggle();
+})
 });
 
 

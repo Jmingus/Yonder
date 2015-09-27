@@ -2,3 +2,4 @@
 .DS_Store
 /scripts/bundle.js
 /scripts/bundle.js.map
+.idea/

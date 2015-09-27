@@ -24,7 +24,7 @@
         <ul>
           <li><a href="#">Events</a></li>
           <li><a href="#maps">Map</a></li>
-          <li><a href="#profile">Profile</a></li>
+          <li><a href="#following">Profile</a></li>
         </ul>
 
       </nav>
@@ -40,13 +40,15 @@
       <ul>
         <li><a href="#">Events</a></li>
         <li><a href="#maps">Map</a></li>
-        <li><a href="#profile">Profile</a></li>
+        <li><a href="#following">Profile</a></li>
       </ul>
 
     </nav>
 
     <div class="wrapper">
-    <section id="landingPase">  
+
+      <section id="eventsPage">
+
         <div class="hero">
 
           <p id="tagline">Life is happening</p>
@@ -54,67 +56,132 @@
 
         </div>
 
-        <article class="event">
+            <article class="event">
+             <script type="text/template" id="events-template">
+              <div class="event-photo"></div>
 
-          <div class="event-photo"></div>
+              <div class="event-info">
 
-          <div class="event-info">
+                <h1 class="day"><%- day_id %></h1>
+                <h2 class="event-name"><%- name %></h2>
+                <p class="time"><%- time_of_day_id %></p>
+                <p class="location"><%- venue %></p>
 
-            <h1 class="day">Day</h1>
-            <h2 class="event-name">Event</h2>
-            <p class="time">Time</p>
-            <p class="location">Location</p>
+                <div class="toggle">
+                  <p><a href="#">More Info <i class="fa fa-chevron-down"></i></a></p>
+                </div>
 
-            <div class="toggle">
-              <p><a href="#">More Info <i class="fa fa-chevron-down"></i></a></p>
-            </div>
+              </div>
 
-          </div>
+              <div class="more-info">
 
-          <div class="more-info">
+                <p class="description">Description</p>
 
-            <p class="description">Description</p>
+              </div>
+             </script>
+            </article>
 
-          </div>
+      </section>
 
-        </article>
-
-        <article class="event">
-
-          <div class="event-photo"></div>
-
-          <div class="event-info">
-
-            <h1 class="day">Day</h1>
-            <h2 class="event-name">Event</h2>
-            <p class="time">Time</p>
-            <p class="location">Location</p>
-
-            <div class="toggle">
-              <p><a href="#">More Info <i class="fa fa-chevron-down"></i></a></p>
-            </div>
-
-          </div>
-
-          <div class="more-info">
-            
-            <p class="description">Description</p>
-
-          </div>
-
-        </article>
-    </section>    
     <section id="mapsPage">
-      <div id="map"></div>
+    <div id="map"></div>
+    </section>
 
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4LwZFVazsCpP77wyAtMKwsgV1QCb6D_k&libraries=places">
-      </script>
+    <section id="followingPage">
+
+      <div class="preferences-link" id="preferences-link">
+        <p><a>Preferences <i class="fa fa-chevron-down"></i></a></p>
+      </div>
+
+      <div class="preferences">
+        <p class="preferences-title">Preferences</p>
+        <ul>
+          <li>x Food</li>
+          <li>x Music</li>
+          <li>x Personals</li>
+          <li>x Sports</li>
+          <li>x Tech</li>
+        </ul>
+      </div>
+
+        <div class="user">
+
+          <div class="user-photo"></div>
+
+          <div class="user-info">
+            <p id="user-id">amacduff's Events</p>
+            <p id="user-sub">Events you are following</p>
+          </div>
+
+        </div>
+
+        <div class="add-event">
+
+          <p><a href="#following"><i class="fa fa-plus" id="addEventDiv"></i> Add Event</a></p>
+
+
+        </div>
+
+        <article class="following">
+
+          <div class="following-info">
+
+            <h1 class="following-name">Event</h1>
+
+            <div class="toggle" id="followingClick">
+              <p><a href="#following"><i class="fa fa-chevron-down"></i></a></p>
+            </div>
+
+            <h2 class="following-location">Location</h2>
+
+          </div>
+
+          <div class="more-info" id="followingMoreInfo">
+
+            <p class="following-time">Time</p>
+            <p class="following-description">Description</p>
+
+          </div>
+
+        </article>
+
+        <article class="following">
+
+          <div class="following-info">
+
+            <h1 class="following-name">Event</h1>
+
+            <div class="toggle" id="taggle">
+              <p ><a href="#following"><i class="fa fa-chevron-down"></i></a></p>
+            </div>
+
+            <h2 class="following-location">Location</h2>
+
+          </div>
+
+          <div class="more-info" id="followingMoreInfo">
+
+            <p class="following-time">Time</p>
+            <p class="following-description">Description</p>
+
+          </div>
+
+        </article>
+
+    </section>    
+<!--     <section id="mapsPage">
+      <div id="map"></div> -->
     
     </section>
     <section id="followingPage">Following
     	<div>
     		<form id="form">
     			<input id="inputName" placeholder="Name of Event" type="text">
+
+    	<!--<div>-->
+    <!-- 		<form id="form"> -->
+<!--     			<input id="inputName" placeholder="Name of Event" type="text">
+>>>>>>> 2b40dc24012fc144f7322bb2e52608fa94d7b413
     			<select id="inputDay" name="Day of the week">
             <option value="1">Monday</option>
             <option value="2">Tuesday</option>
@@ -124,12 +191,13 @@
             <option value="6">Saturday</option>
             <option value="7">Sunday</option>
           <input id="inputTime" placeholder="Time" type="time" name="time">
-       <!--    <div class="input-group clockpicker" data-placement="left" data-align="top" data-autoclose="true">
+          <div class="input-group clockpicker" data-placement="left" data-align="top" data-autoclose="true">
+
               <input type="text" class="form-control" value="13:14">
               <span class="input-group-addon">
                 <span class="glyphicon glyphicon-time"></span>
               </span>
-          </div> -->
+          </div>
           <select id="inputArea"name="Area of Austin">
             <option value="1">North Austin</option>
             <option value="2">South Austin</option>
@@ -137,7 +205,7 @@
             <option value="4">Downtown</option>
             <option value="5">South Congress</option>
           </select>
-    			<select id="inputType"name="Event Type">
+    			<select id="inputType" name="Event Type">
   					<option value="1">Music</option>
   					<option value="2">Athletics</option>
   					<option value="3">Tech</option>
@@ -147,7 +215,11 @@
           <button id="addEventButton">Add Event</button>
     		</form>
     	</div>
+    -->
     </section>
+
+     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4LwZFVazsCpP77wyAtMKwsgV1QCb6D_k&libraries=places">
+    </script>
 
     </div>
 
@@ -158,7 +230,6 @@
     </footer>
 
   <script type="text/javascript" src="/scripts/bundle.js"></script>
-  <script type="text/template" id="EventTemplate"></script>
 
   </body>
 </html>

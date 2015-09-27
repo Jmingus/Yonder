@@ -12,6 +12,7 @@
 }
 
 #tagline {
+	color: $color-contrast;
 	font: {
 		family: $font-heading;
 		@include fntz(2);
@@ -20,6 +21,7 @@
 }
 
 #tagline-sub {
+	color: $color-contrast;
 	font: {
 		style: italic;
 		weight: 400;
@@ -27,7 +29,7 @@
 }
 
 .event {
-	background-color: $color-neutral-dark;
+	background-color: $color-neutral-light;
 	clear: both;
 	overflow: hidden;
 
@@ -42,7 +44,7 @@
 			width: 100%;
 
 			a {
-				background-color: lighten($color-neutral-dark, 5%);
+				background-color: darken($color-neutral-light, 5%);
 				border-radius: 0.25rem;
 				color: $color-contrast;
 				font: {
@@ -85,7 +87,7 @@
 	}
 
 	&:nth-child(odd) {
-		background-color: lighten($color-neutral-dark, 10%);
+		background-color: darken($color-neutral-light, 10%);
 
 		.event-info {
 			float: right;
@@ -102,9 +104,17 @@
 		}
 
 		.toggle a {
-			background-color: lighten($color-neutral-dark, 15%);
+			background-color: darken($color-neutral-light, 15%);
 		}
 
+	}
+
+}
+
+article.event {
+
+	&:nth-child(n+9) {
+		display: none;
 	}
 
 }

@@ -1,0 +1,132 @@
+/* Profile */
+
+.preferences-link {
+	background-color: darken($color-neutral-light, 10%);
+	padding: 0.5rem 0;
+	text-align: center;
+
+	a {
+		color: $color-accent;
+		text-transform: uppercase;
+	}
+
+}
+
+.preferences {
+	background-color: darken($color-neutral-light, 10%);
+	display: none;
+	padding: 1rem 2rem;
+	text-align: center;
+
+	.preferences-title {
+		display: none;
+	}
+
+	ul {
+
+		li {
+			display: inline-block;
+			padding: 0 1.25rem 0.5rem 1.25rem;
+		}
+
+	}
+
+}
+
+.user {
+	background-color: $color-neutral-light;
+	box-sizing: border-box;
+	overflow: hidden;
+	padding: 1rem 2rem;
+
+	.user-photo {
+		background: url(../images/user.jpg) center center no-repeat;
+		background-size: cover;
+		border-radius: 50%;
+		float: left;
+		height: 4.5rem;
+		width: 4.5rem;
+	}
+
+	.user-info {
+		float: left;
+		margin-left: 1rem;
+
+		#user-id {
+			color: $color-text;
+			font: {
+				family: $font-heading;
+				@include fntz(1.5);
+				weight: 700;
+			}
+			text-transform: lowercase;
+		}
+
+		#user-sub {
+			color: $color-text;
+			font: {
+				style: italic;
+				weight: 300;
+			}
+		}
+
+	}
+
+}
+
+.add-event {
+	background-color: $color-contrast;
+	padding: 2rem;
+	text-align: center;
+
+	a {
+		border: 2px solid $color-accent;
+		border-radius: 2rem;
+		color: $color-accent;
+		font: {
+			weight: 500;
+		}
+		padding: 0.75rem 1rem;
+		text-transform: uppercase;
+	}
+
+}
+
+.following {
+	border-bottom: 2px solid $color-neutral-light;
+	padding-top: 1rem;
+
+	.following-location {
+		color: $color-neutral-dark;
+		padding-bottom: 1rem;
+	}
+
+	&:last-child {
+		border-bottom: 0;
+		margin-bottom: 4rem;
+	}
+
+}
+
+.toggle {
+	float: right;
+
+	a {
+		color: $color-accent;
+		padding: 2rem;
+	}
+
+}
+
+.more-info {
+	display: none;
+	margin: 0 2rem;
+	padding-bottom: 2rem;
+}
+
+.following-time {
+	font: {
+		style: italic;
+	}
+}
+

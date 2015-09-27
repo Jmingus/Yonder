@@ -1,24 +1,18 @@
+var $ = require('jquery');
 var Backbone = require('backbone');
-var _ =require('backbone/node_modules/underscore');
-module.export = Backbone.View.extend({
-	tagName: 'section',
-	initialize:function(){
-		_.bindAll(
-			this,
-			'render',
-			'unfollow'
-		);
-		this.$el.on('change',this.render());
+var _ = require('backbone/node_modules/underscore');
+
+module.exports = Backbone.View.extend({
+	tagName: 'article',
+    className: 'event',
+	template: _.template($('#events-template').html()),
+	initialize: function(){
+		//this.model.on('sync',this.render);
 		this.render();
 	},
-	render:function(){
-		var inputName = this.model.get('name');
-		var inputDay = this.model.getDayString();
-		var inputTimeOfDay = this.model.get('timeOfDay');
-		var inputLocation =this.model.getLocationString();
-		var inputType = this.model.getTypeString();
-
-		this.$el.html('<div>'+inputName+'<br>'+inputDay+'<br>'+inputTimeOfDay+'<br>'+inputLocation+'<br>'+inputType+'</div>');
+	render: function(){
+		console.log(this.model);
+		this.$el.html(this.template(this.model.toJSON()));
 	},
 	unfollow: function(){
 		this.$el.remove();
