@@ -2,6 +2,7 @@
 
 header {
 	background-color: $color-primary;
+	height: 3rem;
 	overflow: hidden;
 }
 
@@ -16,6 +17,11 @@ header {
 			@include fntz(1.75);
 			weight: 700;
 		}
+
+		&:first-letter {
+			letter-spacing: -0.1rem;
+		}
+
 	}
 
 }
