@@ -7,7 +7,6 @@ module.exports = Backbone.View.extend({
     className: 'event',
 	template: _.template($('#events-template').html()),
 	initialize: function(){
-		//this.model.on('sync',this.render);
 		this.render();
 	},
 	render: function(){
