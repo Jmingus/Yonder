@@ -24,7 +24,7 @@
         <ul>
           <li><a href="#">Events</a></li>
           <li><a href="#maps">Map</a></li>
-          <li><a href="#profile">Profile</a></li>
+          <li><a href="#following">Profile</a></li>
         </ul>
 
       </nav>
@@ -40,13 +40,14 @@
       <ul>
         <li><a href="#">Events</a></li>
         <li><a href="#maps">Map</a></li>
-        <li><a href="#profile">Profile</a></li>
+        <li><a href="#following">Profile</a></li>
       </ul>
 
     </nav>
 
     <div class="wrapper">
-      <section id="landingPage">
+
+      <section id="eventsPage">
 
         <div class="hero">
 
@@ -55,55 +56,30 @@
 
         </div>
 
-        <article class="event">
+            <article class="event">
+             <script type="text/template" id="events-template">
+              <div class="event-photo"></div>
 
-          <div class="event-photo"></div>
+              <div class="event-info">
 
-          <div class="event-info">
+                <h1 class="day"><%- day_id %></h1>
+                <h2 class="event-name"><%- name %></h2>
+                <p class="time"><%- time_of_day_id %></p>
+                <p class="location"><%- venue %></p>
 
-            <h1 class="day">Day</h1>
-            <h2 class="event-name">Event</h2>
-            <p class="time">Time</p>
-            <p class="location">Location</p>
+                <div class="toggle">
+                  <p><a href="#">More Info <i class="fa fa-chevron-down"></i></a></p>
+                </div>
 
-            <div class="toggle">
-              <p><a href="#">More Info <i class="fa fa-chevron-down"></i></a></p>
-            </div>
+              </div>
 
-          </div>
+              <div class="more-info">
 
-          <div class="more-info">
+                <p class="description">Description</p>
 
-            <p class="description">Description</p>
-
-          </div>
-
-        </article>
-
-        <article class="event">
-
-          <div class="event-photo"></div>
-
-          <div class="event-info">
-
-            <h1 class="day">Day</h1>
-            <h2 class="event-name">Event</h2>
-            <p class="time">Time</p>
-            <p class="location">Location</p>
-
-            <div class="toggle">
-              <p><a href="#">More Info <i class="fa fa-chevron-down"></i></a></p>
-            </div>
-
-          </div>
-
-          <div class="more-info">
-
-            <p class="description">Description</p>
-
-          </div>
-
-        </article>
+              </div>
+             </script>
+            </article>
 
       </section>
 
@@ -191,8 +167,7 @@
 
         </article>
 
-    <!--
-    	<div>
+    	<!--<div>-->
     <!-- 		<form id="form"> -->
 <!--     			<input id="inputName" placeholder="Name of Event" type="text">
     			<select id="inputDay" name="Day of the week">
@@ -204,11 +179,8 @@
             <option value="6">Saturday</option>
             <option value="7">Sunday</option>
           <input id="inputTime" placeholder="Time" type="time" name="time">
-<<<<<<< HEAD
-              <div class="input-group clockpicker" data-placement="left" data-align="top" data-autoclose="true">
-=======
           <div class="input-group clockpicker" data-placement="left" data-align="top" data-autoclose="true">
->>>>>>> c29bea217632fd85d8882730eb65f10188ac4aa4
+
               <input type="text" class="form-control" value="13:14">
               <span class="input-group-addon">
                 <span class="glyphicon glyphicon-time"></span>
