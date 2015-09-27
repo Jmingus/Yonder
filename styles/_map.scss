@@ -35,7 +35,6 @@
 }
 
 #map {
-	background-color: red;
 	height: 18.75rem;
 	overflow: hidden;
 }
@@ -70,5 +69,13 @@
 	font: {
 		style: italic;
 	}
+}
+
+article.mapEvent {
+
+	&:nth-child(n+12) {
+		display: none;
+	}
+
 }
 
