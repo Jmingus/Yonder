@@ -531,7 +531,7 @@ header {
     background: linear-gradient(rgba(0, 172, 178, 0.75), rgba(0, 172, 178, 0.75)), url(../images/music.jpg) center center no-repeat;
     background-size: cover; }
 
-article.event:nth-child(n+9) {
+article.event:nth-child(n+10) {
   display: none; }
 
 /* Profile */
@@ -749,7 +749,7 @@ footer {
     .filter .event-type {
       padding-left: 1rem; }
   .user {
-    padding: 2.75rem 2rem; }
+    padding: 2.9rem 2rem; }
     .user .user-photo {
       height: 6rem;
       margin-left: 12%;
