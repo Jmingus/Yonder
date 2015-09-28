@@ -64,7 +64,7 @@
 
                 <h1 class="day"><%- day_id %></h1>
                 <h2 class="event-name"><%- name %></h2>
-                <p class="time"><%- time_of_day_id %></p>
+                <p class="time"><%- specific_time %></p>
                 <p class="location"><%- venue %></p>
 
                 <div class="toggle" id="taggle">
@@ -75,7 +75,7 @@
 
               <div class="more-info" id="taggleDiv">
 
-                <p class="description">Description</p>
+                <p class="description"><%- description %></p>
 
               </div>
              </script>
@@ -106,6 +106,7 @@
           <li><i class="fa fa-check-square-o"></i> Tech</li>
         </ul>
       </div>
+
       
       <article class="mapEvent">
 
@@ -131,26 +132,26 @@
         </article>
 
         <article class="mapEvent">
-
+        <script type="text/template" id="map-template">
           <div class="mapEvent-info">
 
-            <h1 class="mapEvent-name">Event</h1>
+            <h1 class="mapEvent-name"><%- name %></h1>
 
             <div class="toggle" id="mapEventTaggle2">
               <p><a href="#maps"><i class="fa fa-chevron-down"></i></a></p>
             </div>
 
-            <h2 class="mapEvent-location">Location</h2>
+            <h2 class="mapEvent-location"><%- venue %></h2>
 
           </div>
 
           <div class="more-info" id="mapEventDiv2">
 
-            <p class="mapEvent-time">Time</p>
-            <p class="mapEvent-description">Description</p>
+            <p class="mapEvent-time"><%- specific_time %></p>
+            <p class="mapEvent-description"><%- description %></p>
 
           </div>
-
+        </script>
         </article>
     </section>
 
@@ -190,80 +191,58 @@
         </div>
 
         <article class="following">
-
+        <script type="text/template" id="following-template">
           <div class="following-info">
 
-            <h1 class="following-name">Event</h1>
+            <h1 class="following-name"><%- name %></h1>
 
             <div class="toggle" id="followingClick">
               <p><a href="#following"><i class="fa fa-chevron-down"></i></a></p>
             </div>
 
-            <h2 class="following-location">Location</h2>
+            <h2 class="following-location"><%- venue %></h2>
 
           </div>
 
           <div class="more-info" id="followingMoreInfo">
 
-            <p class="following-time">Time</p>
-            <p class="following-description">Description</p>
+            <p class="following-time"><%- specific_time %></p>
+            <p class="following-description"><%- description %></p>
 
           </div>
-
+        </script>
         </article>
 
-        <article class="following">
+     		<!--<form id="form">-->
+     			<!--<input id="inputName" placeholder="Name of Event" type="text">-->
 
-          <div class="following-info">
-
-            <h1 class="following-name">Event</h1>
-
-            <div class="toggle" id="taggle">
-              <p ><a href="#following"><i class="fa fa-chevron-down"></i></a></p>
-            </div>
-
-            <h2 class="following-location">Location</h2>
-
-          </div>
-
-          <div class="more-info" id="followingMoreInfo">
-
-            <p class="following-time">Time</p>
-            <p class="following-description">Description</p>
-
-          </div>
-
-        </article>
-     		<form id="form">
-     			<input id="inputName" placeholder="Name of Event" type="text">
-
-    			<select id="inputDay" name="Day of the week">
-                    <option value="1">Monday</option>
-                    <option value="2">Tuesday</option>
-                    <option value="3">Wednesday</option>
-                    <option value="4">Thursday</option>
-                    <option value="5">Friday</option>
-                    <option value="6">Saturday</option>
-                    <option value="7">Sunday</option>
-                </select>
-                <input id="inputTime" placeholder="Time" type="time" name="time">
-                <select id="inputArea"name="Area of Austin">
-                    <option value="1">North Austin</option>
-                    <option value="2">South Austin</option>
-                    <option value="3">Barton Springs</option>
-                    <option value="4">Downtown</option>
-                    <option value="5">South Congress</option>
-                </select>
-                <input id="inputVenue" placeholder="Location" type="text">
-    			<select id="inputType" name="Event Type">
-  					<option value="1">Music</option>
-  					<option value="2">Athletics</option>
-  					<option value="3">Tech</option>
-  					<option value="4">Food</option>
-  					<option value="5">Personal</option>
-				</select>
-                <button id="addEventButton" type="submit">Add Event</button>
-    		</form>
+    			<!--<select id="inputDay" name="Day of the week">-->
+                    <!--<option value="1">Monday</option>-->
+                    <!--<option value="2">Tuesday</option>-->
+                    <!--<option value="3">Wednesday</option>-->
+                    <!--<option value="4">Thursday</option>-->
+                    <!--<option value="5">Friday</option>-->
+                    <!--<option value="6">Saturday</option>-->
+                    <!--<option value="7">Sunday</option>-->
+                <!--</select>-->
+                <!--<input id="inputTime" placeholder="Time" type="time" name="time">-->
+                <!--<select id="inputArea"name="Area of Austin">-->
+                    <!--<option value="1">North Austin</option>-->
+                    <!--<option value="2">South Austin</option>-->
+                    <!--<option value="3">Barton Springs</option>-->
+                    <!--<option value="4">Downtown</option>-->
+                    <!--<option value="5">South Congress</option>-->
+                <!--</select>-->
+                <!--<input id="inputVenue" placeholder="Location" type="text">-->
+    			<!--<select id="inputType" name="Event Type">-->
+  					<!--<option value="1">Music</option>-->
+  					<!--<option value="2">Athletics</option>-->
+  					<!--<option value="3">Tech</option>-->
+  					<!--<option value="4">Food</option>-->
+  					<!--<option value="5">Personal</option>-->
+				<!--</select>-->
+                <!--<button id="addEventButton" type="submit">Add Event</button>-->
+    		<!--</form>-->
     </section>
 
      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4LwZFVazsCpP77wyAtMKwsgV1QCb6D_k&libraries=places">
