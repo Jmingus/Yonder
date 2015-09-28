@@ -71,54 +71,6 @@
 		overflow: hidden;
 		width: 50%;
 	}
-	.event-photo {
-		background: linear-gradient(
-		    rgba(0, 172, 178, 0.75), 
-		    rgba(0, 172, 178, 0.75)
-		    ), 
-		    url(../images/food.jpg) center center no-repeat;
-		background-size: cover;
-		float: right;
-		height: 12rem;
-		overflow: hidden;
-		width: 50%;
-	}
-	.event-photo {
-		background: linear-gradient(
-		    rgba(0, 172, 178, 0.75), 
-		    rgba(0, 172, 178, 0.75)
-		    ), 
-		    url(../images/tech.jpg) center center no-repeat;
-		background-size: cover;
-		float: right;
-		height: 12rem;
-		overflow: hidden;
-		width: 50%;
-	}
-	.event-photo {
-		background: linear-gradient(
-		    rgba(0, 172, 178, 0.75), 
-		    rgba(0, 172, 178, 0.75)
-		    ), 
-		    url(../images/food.jpg) center center no-repeat;
-		background-size: cover;
-		float: right;
-		height: 12rem;
-		overflow: hidden;
-		width: 50%;
-	}
-	.event-photo {
-		background: linear-gradient(
-		    rgba(0, 172, 178, 0.75), 
-		    rgba(0, 172, 178, 0.75)
-		    ), 
-		    url(../images/personals.jpg) center center no-repeat;
-		background-size: cover;
-		float: right;
-		height: 12rem;
-		overflow: hidden;
-		width: 50%;
-	}
 	.more-info {
 		clear: both;
 		display: none;
@@ -141,12 +93,6 @@
 		}
 
 		.event-photo {
-			background: linear-gradient(
-		    rgba(0, 172, 178, 0.75), 
-		    rgba(0, 172, 178, 0.75)
-		    ), 
-		    url(../images/music.jpg) center center no-repeat;
-			background-size: cover;
 			float: left;
 		}
 
@@ -154,6 +100,62 @@
 			background-color: darken($color-neutral-light, 15%);
 		}
 
+	}
+
+	&:nth-child(3) {
+		.event-photo {
+			background: linear-gradient(
+		    rgba(0, 172, 178, 0.75), 
+		    rgba(0, 172, 178, 0.75)
+		    ), 
+
+		    url(../images/food.jpg) center center no-repeat;
+			background-size: cover;
+		}
+	}
+
+	&:nth-child(4) {
+		.event-photo {
+			background: linear-gradient(
+		    rgba(0, 172, 178, 0.75), 
+		    rgba(0, 172, 178, 0.75)
+		    ), 
+		    url(../images/tech.jpg) center center no-repeat;
+			background-size: cover;
+		}
+	}
+
+	&:nth-child(5) {
+		.event-photo {
+			background: linear-gradient(
+		    rgba(0, 172, 178, 0.75), 
+		    rgba(0, 172, 178, 0.75)
+		    ), 
+		    url(../images/personal.jpg) center center no-repeat;
+			background-size: cover;
+		}
+	}
+
+	&:nth-child(6) {
+		.event-photo {
+			background: linear-gradient(
+		    rgba(0, 172, 178, 0.75), 
+		    rgba(0, 172, 178, 0.75)
+		    ), 
+		    url(../images/sports.jpg) center center no-repeat;
+			background-size: cover;
+		}
+	}
+
+	&:nth-child(7) {
+		.event-photo {
+			background: linear-gradient(
+		    rgba(0, 172, 178, 0.75), 
+		    rgba(0, 172, 178, 0.75)
+		    ), 
+		    url(../images/music.jpg) center center no-repeat;
+			background-size: cover;
+		}
 	}
 
 }
