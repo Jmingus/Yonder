@@ -152,8 +152,13 @@ $(document).ready(function(){
     var $menuLink = $('.menu-link');
     var $topNav = $('.nav-sm');
 
-    var $taggle = $('#taggle');
-    var $moreInfoDiv = $('.more-info');
+
+//JQUERY ACTIONS
+var $menuLink = $('.menu-link');
+var $smNav = $('.nav-sm');
+
+var $taggle = $('#taggle');
+var $moreInfoDiv = $('#taggleDiv');
 
     var $preferenceLink=$('#preferences-link');
     var $preferences = $('.preferences');
@@ -164,22 +169,42 @@ $(document).ready(function(){
     var $followingClick= $('#followingClick');
     var $followingMoreInfo = $('#followingMoreInfo');
 
-    $menuLink.on('click',function(){
-      $topNav.toggle();
-    })
-    $preferenceLink.on('click',function(){
-      $preferences.toggle();
 
-    })
-    $taggle.on('click',function(){
-      $moreInfoDiv.toggle();
-    })
-    $addEvent.on('click',function(){
-      $addEventDiv.toggle();
-    })
-    $followingClick.on('click',function(){
-      $followingMoreInfo.toggle();
-    })
+var $mapsTuggle = $('#mapsFilterTuggle');
+var $mapsFilter = $('#mapsFilter');
+
+var $mapEventTaggle =$('#mapEventTaggle');
+var $mapEventDiv = $('#mapEventDiv');
+
+var $mapEventTaggle2 =$('#mapEventTaggle2');
+var $mapEventDiv2 = $('#mapEventDiv2');
+
+$menuLink.on('click',function(){
+  $smNav.toggle();
+})
+$preferenceLink.on('click',function(){
+  $preferences.toggle();
+
+})
+$taggle.on('click',function(){
+  $moreInfoDiv.toggle();
+})
+$addEvent.on('click',function(){
+  $addEventDiv.toggle();
+})
+$followingClick.on('click',function(){
+  $followingMoreInfo.toggle();
+})
+$mapsTuggle.on('click',function(){
+  $mapsFilter.toggle();
+})
+$mapEventTaggle.on('click',function(){
+  $mapEventDiv.toggle();
+})
+$mapEventTaggle2.on('click',function(){
+  $mapEventDiv2.toggle();
+})
+
 });
 
 

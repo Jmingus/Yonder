@@ -7,10 +7,12 @@ module.exports = Backbone.View.extend({
     className: 'event',
 	template: _.template($('#events-template').html()),
 	initialize: function(){
+
 		this.render();
 	},
 	render: function(){
-		this.$el.html(this.template(this.model.toJSON()));
+		this.$el.html('<div class="'+this.model.get('category_id')+'"></div>'+this.template(this.model.toJSON()));
+		console.log(this.model.get('category_id'));
 	},
 	unfollow: function(){
 		this.$el.remove();
